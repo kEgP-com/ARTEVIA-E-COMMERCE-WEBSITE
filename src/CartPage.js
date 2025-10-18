@@ -1,6 +1,6 @@
 import React from "react";
-import { LinearIndeterminate } from "./components/LinearIndeterminate";
-import { NavBar } from "./components/NavBar";
+import './LinerIndeterminate';
+import './NavBar';
 import "./style.css";
 
 
