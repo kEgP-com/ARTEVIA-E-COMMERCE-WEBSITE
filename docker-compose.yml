@@ -1,9 +1,9 @@
 version: "3.9"
 
 services:
-  react-dev:
+  react_dev:
     image: node:20-alpine
-    container_name: react-dev
+    container_name: react_dev
     working_dir: /app
     volumes:
       - .:/app
