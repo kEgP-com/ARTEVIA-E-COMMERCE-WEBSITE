@@ -1,12 +1,10 @@
-// import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Profile from './profile/Profile';
-// import App from './App';
-// import MyHtml from './myhtml';
-
-// import MyHtml from './myhtml';
-
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(<Profile />);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
