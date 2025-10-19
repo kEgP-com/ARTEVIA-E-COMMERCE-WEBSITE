@@ -1,14 +1,4 @@
 import React from "react";
-import  LinearIndeterminate  from "./LinearIndeterminate";
-import  NavBar  from "./NavBar";
-import  Product  from "./Product";
-import  SearchBrowser from "./SearchBrowser";
-import facebook from "./facebook.png";
-import instagram from "./instagram.png";
-import qrCode from "./qr-code.png";
-import "./style.css";
-import wallpaper from "./wallpaper.png";
-import x from "./x.png";
 
 export const Products = () => {
   return (
@@ -72,3 +62,5 @@ export const Products = () => {
     </div>
   );
 };
+
+export default Products;
