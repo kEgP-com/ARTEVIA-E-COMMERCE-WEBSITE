@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { NavBar } from "../navbar/NavBar";
-
+import "/src/index.js";
 export const CartPage = () => {
   return (
     <div className="CART-PAGE" data-model-id="37:44">
@@ -74,7 +74,7 @@ export const CartPage = () => {
             connecting creators with customers, we offer a seamless way to shop
             original pieces with confidence and convenience.
           </p>
-          
+
         </div>
         
       </footer>
