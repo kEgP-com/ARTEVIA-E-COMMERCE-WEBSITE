@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import { LinearIndeterminate } from "../LinearIndeterminate/LinearIndeterminate";
 import { NavBar } from "../navbar/NavBar";
 
 export const CartPage = () => {
@@ -75,28 +74,9 @@ export const CartPage = () => {
             connecting creators with customers, we offer a seamless way to shop
             original pieces with confidence and convenience.
           </p>
+          
         </div>
-        <LinearIndeterminate
-          buildingBlocksTrackShapeClassName="linear-indeterminate-progress-indicator"
-          className="line"
-          step="zero"
-          thickness="four-dp"
-          type="flat"
-        />
-        <LinearIndeterminate
-          buildingBlocksTrackShapeClassName="linear-indeterminate-progress-indicator"
-          className="linear-indeterminate-instance"
-          step="zero"
-          thickness="four-dp"
-          type="flat"
-        />
-        <LinearIndeterminate
-          buildingBlocksTrackShapeClassName="linear-indeterminate-progress-indicator"
-          className="linear-indeterminate-progress-indicator-instance"
-          step="zero"
-          thickness="four-dp"
-          type="flat"
-        />
+        
       </footer>
 
       <img
