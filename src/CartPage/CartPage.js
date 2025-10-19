@@ -1,8 +1,7 @@
 import React from "react";
-import './LinerIndeterminate';
-import './NavBar';
 import "./style.css";
-
+import { LinearIndeterminate } from "../LinearIndeterminate/LinearIndeterminate";
+import { NavBar } from "../navbar/NavBar";
 
 export const CartPage = () => {
   return (
@@ -77,7 +76,6 @@ export const CartPage = () => {
             original pieces with confidence and convenience.
           </p>
         </div>
-
         <LinearIndeterminate
           buildingBlocksTrackShapeClassName="linear-indeterminate-progress-indicator"
           className="line"
