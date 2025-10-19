@@ -1,8 +1,5 @@
 import React from "react";
 import "./style.css";
-import { NavBar } from "../navbar/NavBar";
-import "/src/index.js";
-import "/src/App.js";
 export const CartPage = () => {
   return (
     <div className="CART-PAGE" data-model-id="37:44">
@@ -280,7 +277,7 @@ export const CartPage = () => {
         </span>
       </p>
 
-      <NavBar
+      <navbar
         className="nav-bar-instance"
         icons="/images/icons-1.svg"
         img="/images/nav-division-3.svg"
