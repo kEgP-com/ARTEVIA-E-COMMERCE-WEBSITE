@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.css";
+import "../css/Register.css";
 import wavebg from "../images/images/login_bg.png"; 
 
 export default function Register() {
