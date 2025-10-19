@@ -36,7 +36,7 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  gap: 15px;
+  gap: 45px;
 }
 
 .icon {
@@ -58,7 +58,7 @@
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 150px;
+  gap: 250px;
   padding: 0;
   margin: 0;
 }
