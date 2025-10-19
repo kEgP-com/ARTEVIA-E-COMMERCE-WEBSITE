@@ -1,4 +1,11 @@
 import React from "react";
+import facebook from "../images/image/facebook.png";
+import instagram from "../images/image/instagram.png";
+import qrCode from "../images/image/qrcode.png"; 
+import wallpaper from "../images/image/wavebg.png"; 
+import x from "../images/image/twitter.png"; 
+import "./Products.css"; 
+
 
 export const Products = () => {
   return (
@@ -29,23 +36,17 @@ export const Products = () => {
 
         <div className="group-3">
           <img className="instagram" alt="Instagram" src={instagram} />
-
           <img className="x" alt="X" src={x} />
-
           <img className="facebook" alt="Facebook" src={facebook} />
 
           <div className="FOLLOW-US">Follow us</div>
-
           <div className="LINKS-4">Facebook</div>
-
           <div className="LINKS-5">Instagram</div>
-
           <div className="LINKS-6">Twitter</div>
         </div>
 
         <div className="group-4">
           <div className="ABOUT-US">About us</div>
-
           <p className="ABOUT-US-TEXT">
             Launched to support artists worldwide, our platform was created to
             make discovering and owning art easy, secure, and inspiring. By
@@ -53,12 +54,12 @@ export const Products = () => {
             original pieces with confidence and convenience.
           </p>
         </div>
-
-        
       </footer>
 
-    
-     
+      <div className="text-wrapper-4">PRODUCTS/CATEGORIES</div>
+
+      <div className="group-5">
+      </div>
     </div>
   );
 };
