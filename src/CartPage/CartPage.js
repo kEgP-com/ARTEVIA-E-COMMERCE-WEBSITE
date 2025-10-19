@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import { NavBar } from "../navbar/NavBar";
 import "/src/index.js";
+import "/src/App.js";
 export const CartPage = () => {
   return (
     <div className="CART-PAGE" data-model-id="37:44">
