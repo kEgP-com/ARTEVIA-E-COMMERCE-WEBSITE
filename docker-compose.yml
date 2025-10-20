@@ -14,7 +14,8 @@ services:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
       - FAST_REFRESH=true
-    command: sh -c "npm install && npm start"
+    # 👇 Added installation of react-icons
+    command: sh -c "npm install && npm install react-icons && npm start"
     stdin_open: true
     tty: true
     restart: unless-stopped
