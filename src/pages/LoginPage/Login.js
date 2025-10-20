@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../css/login.css";
-import logo from "../images/logo/logo.png";
-import wavebg from "../images/images/login_bg.png"; // ✅ import background image
+import "../../css/login.css";
+import logo from "../../images/logo/logo.png";
+import wavebg from "../../images/images/login_bg.png"; // ✅ import background image
 import { useNavigate, Link } from "react-router-dom"; // ✅ Import Link
 
 export default function Login() {

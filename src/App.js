@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import ForgotPassword from "./pages/ForgotPassword";
-import CodeVerification from "./pages/Code_verification"; // ✅ add this
+import Login from "./pages/LoginPage/Login";
+import Register from "./pages/LoginPage/Register";
+import ForgotPassword from "./pages/LoginPage/ForgotPassword";
+import CodeVerification from "./pages/LoginPage/Code_verification"; 
 
 export default function App() {
   return (

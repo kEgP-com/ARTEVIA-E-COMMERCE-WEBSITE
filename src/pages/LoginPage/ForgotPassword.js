@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../css/login.css";
-import logo from "../images/logo/logo.png";
-import wavebg from "../images/images/login_bg.png";
+import "../../css/login.css";
+import logo from "../../images/logo/logo.png";
+import wavebg from "../../images/images/login_bg.png";
 import { useNavigate } from "react-router-dom";
-import Overlay from "../components/Overlay"; // ✅ Import the overlay
+import Overlay from "../../components/Overlay"; 
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");

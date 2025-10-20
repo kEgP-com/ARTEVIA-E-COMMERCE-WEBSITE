@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../css/login.css";
-import logo from "../images/logo/logo.png";
-import wavebg from "../images/images/login_bg.png";
+import "../../css/login.css";
+import logo from "../../images/logo/logo.png";
+import wavebg from "../../images/images/login_bg.png";
 import { useNavigate } from "react-router-dom";
 
 export default function CodeVerification() {
