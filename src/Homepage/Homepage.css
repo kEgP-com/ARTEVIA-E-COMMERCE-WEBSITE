@@ -1,0 +1,616 @@
+/* Add this to the top of App.css */
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Regular.ttf') format('truetype');
+  font-weight: normal; /* 400 */
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Bold.ttf') format('truetype');
+  font-weight: bold; /* 700 */
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../fonts/Lora-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ... rest of your CSS ... */
+/* Universal CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Wrapper */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+/* The rest of your CSS remains the same */
+/* ✅ HERO SECTION - MODIFIED */
+/* ✅ HERO SECTION - CORRECTED */
+.hero {
+  padding: 60px 30px;
+  text-align: center;
+  /* margin-top: 100px;      ❌ REMOVE THIS */
+  /* margin-bottom: 500px;  ❌ REMOVE THIS */
+  
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  
+  /* ✨ CHANGE this to move content to the top */
+  justify-content: flex-start; 
+  /* ✨ ADD this to center the content and prevent it from stretching */
+  align-items: flex-start;
+
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+/* Let's refine the hero text to match the design */
+.hero h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif; /* Nicer serif font */
+  font-size: 3.5em; /* Larger font size */
+  color: #372414;
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.hero p {
+  font-size: 1.1em;
+  max-width: 500px; /* Constrain the paragraph width */
+  margin-top: 15px; /* Add some space below the h1 */
+  margin-left: 30px;
+  color: #372414;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+/* ✅ BUTTON - CORRECTED */
+.btn-primary {
+  /* ✨ Let's add more padding and margin to match the design */
+  padding: 15px 40px; 
+  margin-top: 30px; /* Space between the paragraph and button */
+
+  border: none;
+  cursor: pointer;
+  background-color: #372414;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em; /* Make button text slightly larger */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-left: 30px;
+}
+
+.btn-primary:hover {
+  background-color: #5a3d24;
+}
+
+
+/* ✅ PROMO SECTION */
+.promo {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  /* Let's also style this button to match the theme */
+  background-color: #372414; /* Dark brown */
+  color: #fff; /* White text */
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #5a3d24;
+}
+
+/* ✅ QUOTE SECTION */
+.quote {
+  text-align: center;
+  padding: 30px; /* Reduced padding slightly to make room for border */
+  font-style: italic;
+  background-color: #B7A087; /* Background color from your header */
+  background: linear-gradient(to right, #f1d0b3, #ffffff, #f1d0b3);
+  color: #372414;           /* Text color */
+  font-family: 'Brush Script MT', cursive; /* Use a script font for quotes */
+  font-size: 2.2em;         /* Larger font size */
+  line-height: 1.5;         /* Improve readability */
+  border-top: 20px solid #372414; /* Top border */
+  border-bottom: 20px solid #372414; /* Bottom border */
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* 👇 ADD THIS: New container for title and badge */
+.promo-title-container {
+  position: relative;
+  width: fit-content; 
+  margin: 20px auto 50px auto; 
+  z-index: 2; /* <-- ADD THIS LINE */
+}
+
+/* 👇 ADD THIS: Styles for the sale badge */
+.sale-badge {
+  position: absolute;
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  z-index: 10; /* Ensures it stays on top */
+  
+  /* Vertically center the badge */
+  top: 80%; 
+  
+  /* Position it on the left edge */
+  left: -350px; 
+  
+  /* This transform pulls the badge 50% of its own width left
+    and 50% of its own height up, perfectly centering it
+    on the left edge of the title.
+  */
+  transform: translate(-50%, -50%);
+}
+/* ===================================== */
+/* ========= ART DISPLAY SECTION ========= */
+/* ===================================== */
+
+.art-display {
+  padding: 40px 20px;
+}
+
+.section-title {
+  display: block;
+  margin: 20px auto 50px auto;
+  width: fit-content;
+  background-color: #5B3D3D;
+  color: white;
+  border-radius: 12px;
+  padding: 15px 190px;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.art-gallery {
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start;  <-- We will control alignment on the column now */
+  gap: 150px;
+  flex-wrap: wrap; 
+}
+
+.gallery-column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  
+  /* 👇 ADD THESE LINES to adjust vertical position */
+  position: relative; /* Enable positioning */
+  top: -100px;       /* Pull the column up by 50px (adjust as needed) */
+}
+
+.art-frame-large {
+  border: 8px solid #372414;
+  background-color: #fff9f0;
+  padding: 15px;
+  width: 630px;
+  height: 400px;
+  margin-top: 50px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* 👇 MODIFIED this rule for portrait frames */
+.art-frame-small {
+  border: 8px solid #372414;
+  background-color: #fff9f0;
+  padding: 15px;
+  width: 250px;   /* Narrower width */
+  height: 300px;  /* Taller height */
+
+  position: relative;
+  overflow: hidden;
+}
+.art-image-large {
+  width: 100%;       /* Fill the frame width */
+  height: 100%;      /* Fill the frame height */
+  object-fit: cover; /* Crop if necessary to cover the frame, preventing distortion */
+  display: block;    /* Remove extra space below image */
+
+}
+
+/* Style for the small images inside their frames */
+.art-image-small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+}
+
+/* ===================================== */
+/* ========= ART OVERLAY STYLES ========= */
+/* ===================================== */
+
+.art-overlay {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Appearance */
+  background: rgba(255, 249, 240, 0.95); /* Slightly transparent version of your frame bg */
+  
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  
+  /* Content layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Show on hover */
+.art-frame-large:hover .art-overlay,
+.art-frame-small:hover .art-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.art-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Puts name on left, price on right */
+  color: #372414;
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 25px; /* Space between info and buttons */
+}
+
+.art-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Styling for the new buttons, based on your image */
+.btn-overlay {
+  background-color: #f5e9d3; /* Light cream color from example */
+  border: 2px solid #372414;
+  border-radius: 8px;
+  padding: 12px;
+  color: #372414;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-overlay:hover {
+  background-color: #372414;
+  color: #f5e9d3;
+}
+
+/* ... (all your existing CSS from hero to art display) ... */
+
+
+/* ===================================== */
+/* ========= PROMO SECTION STYLES ======== */
+/* ===================================== */
+
+/* This is the main background box */
+.promo-content-wrapper {
+  background-color: #B7A087; /* The requested background color */
+  border-radius: 15px;
+  padding: 80px 40px 40px; /* Extra top padding to clear the title */
+  position: relative;
+  margin-top: -60px; /* Pulls it up behind the CATEGORIES title */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1; /* Make sure it sits behind the title */
+}
+
+/* This styles the container for the three frames */
+.category-gallery {
+  width: 760px;
+  overflow: hidden; /* 👈 ADD: This hides frames 4 and 5 */
+  margin: 0 auto 40px auto; /* 👈 MODIFY: Center the window */
+}
+
+.category-carousel-inner {
+  display: flex; /* Lays out all 5 frames in a row */
+  gap: 80px; /* Space between frames */
+  transition: transform 0.5s ease-in-out; /* 👈 This is the animation! */
+}
+
+/* This styles the three empty frames */
+.category-frame {
+  border: 8px solid #372414;
+  background-color: #fff9f0;
+  padding: 15px;
+  width: 200px; 
+  height: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-shrink: 0; /* 👈 ADD: Prevents frames from shrinking */
+  
+  /* Added these to center the text placeholder */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lora', serif;
+
+  /* 👇 ADD THESE LINES FOR THE BACKGROUND IMAGE 👇 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* Needed for the overlay */
+  z-index: 1;
+}
+
+/* 👇 ADD THIS NEW RULE for the overlay 👇 */
+.category-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* 40% black overlay */
+  z-index: 2; /* Sits on top of the BG image */
+}
+
+/* 👇 ADD THIS NEW RULE for the category text 👇 */
+.category-name {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  z-index: 3; /* Sits on top of the overlay */
+  position: relative; /* Required for z-index */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* For readability */
+}
+
+
+/* This styles the pagination dots */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  gap: 15px;
+}
+
+.pagination-dots .dot {
+  width: 15px;
+  height: 15px;
+  background-color: #372414; 
+  border-radius: 50%;
+  opacity: 0.4;
+  cursor: pointer; /* 👈 ADD: Shows it's clickable */
+  transition: opacity 0.3s ease; /* 👈 ADD: Nice fade effect */
+}
+
+.pagination-dots .dot.active {
+  opacity: 1; /* Active */
+}
+
+/* This styles the promo text at the bottom */
+.promo-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  color: #372414;
+  line-height: 1.6;
+}
+
+/* ... (existing CSS) ... */
+
+/* ... (existing CSS for hero to promo sections) ... */
+
+/* ===================================== */
+/* ========= DISCOVERY SECTION STYLES ======== */
+/* ===================================== */
+
+.discovery {
+  position: relative;
+  z-index: 1; 
+  margin-top: 40px; 
+  
+  /* 👇 2. ADDED BACKGROUND STYLES HERE */
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 40px; /* Adds space so the wave is visible */
+}
+
+.discovery .section-title {
+  position: relative;
+  z-index: 2; 
+}
+
+.discovery-content-wrapper {
+  background-color: #674831;
+  padding: 80px 20px 40px 20px; 
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-top: -60px; 
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px; 
+  position: relative;
+  z-index: 1; 
+}
+
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 70px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto; 
+}
+
+.discovery-frame {
+  border: 8px solid #372414;
+  background-color: #fff9f0;
+  padding: 15px;
+  width: 100%; 
+  height: 350px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+  position: relative; /* Needed for the overlay positioning */
+}
+
+.discovery-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; 
+}
+
+/* 👇 ADD THESE NEW OVERLAY STYLES FOR DISCOVERY FRAMES 👇 */
+
+.discovery-overlay {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Appearance */
+  background: rgba(255, 249, 240, 0.95); /* Light cream, slightly transparent */
+  
+  /* Hide by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  
+  /* Content layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Show on hover */
+.discovery-frame:hover .discovery-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.discovery-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #372414;
+  font-family: 'Lora', serif;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 25px; /* Space between info and buttons */
+}
+
+.discovery-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.btn-discovery-overlay {
+  background-color: #f5e9d3; /* Light cream */
+  border: 2px solid #372414;
+  border-radius: 8px;
+  padding: 12px;
+  color: #372414;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-discovery-overlay:hover {
+  background-color: #372414;
+  color: #f5e9d3;
+}
+
+/* 👆 END NEW OVERLAY STYLES FOR DISCOVERY FRAMES 👆 */
+
+
+.btn-browse-more {
+  background-color: #372414;
+  color: #fff;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 60px; 
+}
+
+.btn-browse-more:hover {
+  background-color: #5a3d24;
+}
+
+/* ===================================== */
+/* ========= BOTTOM WAVE STYLES ======== */
+/* ===================================== */
+
+.bottom-wave-bg {
+  /* This gives the background a visible height */
+  height: 200px; /* You can adjust this value */
+  
+  /* These lines make the image cover the section */
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  
+  /* Adds space between discovery section and this wave */
+  margin-top: 40px; 
+}
