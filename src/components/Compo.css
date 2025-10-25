@@ -1,4 +1,33 @@
-/* TOP NAVBAR */
+
+/* ===================================== */
+/* ========= STICKY/HIDE NAVBAR ======== */
+/* ===================================== */
+
+/* This is the new wrapper for BOTH navbars */
+.navbar-container {
+  /* Makes it stick to the top */
+  position: sticky;
+  top: 0; 
+  width: 100%;
+  
+  /* Ensures it's above other content */
+  z-index: 1000; 
+  
+  /* Add a smooth transition for showing/hiding */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* This class moves the navbar INTO view */
+.navbar-container.visible {
+  transform: translateY(0);
+}
+
+/* This class moves the navbar OUT of view (upwards) */
+.navbar-container.hidden {
+  transform: translateY(-100%);
+}
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -16,6 +45,12 @@
   font-size: 20px;
   font-weight: bold;
   color: #372414; 
+}
+/* This styles the new logo image */
+.logo-img {
+ height: 40px; /* You can change this height! */
+ width: auto; /* Keeps the aspect ratio */
+ cursor: pointer;
 }
 
 .nav-center {
@@ -162,4 +197,65 @@
   background-color: #372414;
   padding: 5px;             
   border-radius: 4px;      
+}
+
+/* ===================================== */
+/* ========= CATEGORIES DROPDOWN ======== */
+/* ===================================== */
+
+/* 1. This makes the parent <li> an anchor for the dropdown */
+.nav-link-dropdown {
+ position: relative;
+}
+
+/* 2. This is the dropdown box itself (hidden by default) */
+.dropdown-content {
+ display: none; /* Hide by default */
+ position: absolute;
+ z-index: 1001; /* Make sure it's on top of other content */
+ 
+ /* Position it centered, 10px below the "CATEGORIES" text */
+ top: calc(100% + 10px); 
+ left: 50%;
+ transform: translateX(-50%);
+
+ /* Styling to match your image */
+  background-color: #B7A087; /* Same background as navbar */
+ min-width: 220px; /* Set a minimum width */
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 8px;
+ padding: 12px 16px;
+}
+
+/* 3. This creates the little triangle at the top */
+.dropdown-content::before {
+ content: "";
+position: absolute;
+ bottom: 100%; /* Position it right on top of the box */
+ left: 50%;
+ transform: translateX(-50%); /* This CSS magic creates a triangle */
+border: 10px solid transparent;
+border-bottom-color: #B7A087;
+}
+
+/* 4. Style the links inside the dropdown */
+.dropdown-content a {
+ color: #372414; /* Same text color as nav */
+ padding: 10px 12px;
+text-decoration: underline; /* Underlined as per your image */
+display: block; /* Makes them stack vertically */
+cursor: pointer;
+transition: background-color 0.2s; /* Smooth hover effect */
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+/* 5. Add a hover effect for the links inside */
+.dropdown-content a:hover {
+background-color: #D3C3B1; /* Use the search bar color for hover */
+border-radius: 4px;
+}
+
+/* 6. This is the magic part: Show the dropdown when hovering the parent <li> */
+.nav-link-dropdown:hover .dropdown-content {
+display: block; /* Show the dropdown */
 }
