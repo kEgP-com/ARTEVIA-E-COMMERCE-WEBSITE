@@ -10,7 +10,7 @@ import ArtistsPage from "./pages/AdminPage/ArtistsPage";
 import LoginPage from "./pages/AdminPage/LoginPage";
 import ForgotPassword from "./pages/AdminPage/ForgotPassword";
 
-import ProtectedRoute from "./components/ProtectedRoute"; // ✅ import guard
+import ProtectedRoute from "./components/ProtectedRoute"; 
 
 export default function AdminApp() {
   return (
