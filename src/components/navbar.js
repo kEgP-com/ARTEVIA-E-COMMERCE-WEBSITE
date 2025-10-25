@@ -67,14 +67,11 @@ function Navbar() {
         <li className="nav-link-dropdown">
         CATEGORIES
       <div className="dropdown-content">
-        <a href="#">Illustration & Sketch</a>
+        <a href="#">Sketch Art</a>
         <a href="#">Digital Art</a>
         <a href="#">Sculpture</a>
         <a href="#">Painting</a>
         <a href="#">Handmade Decor</a>
-        <a href="#">Mixed Media</a>
-        <a href="#">Prints & Posters</a>
-        <a href="#">Photography</a>
       </div>
       </li>
 
