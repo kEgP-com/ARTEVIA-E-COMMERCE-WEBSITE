@@ -1,11 +1,11 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Dashboard_Admin from "./pages/AdminPage/Dashboard_Admin";
+import DashboardAdmin from "./pages/AdminPage/Dashboard_Admin";
 import ArtsPage from "./pages/AdminPage/ArtsPage";
-import Admin_users from "./pages/AdminPage/Admin_users";
-import Admin_orders from "./pages/AdminPage/Admin_orders";
-import Admin_messages from "./pages/AdminPage/Admin_messages";
+import AdminUsers from "./pages/AdminPage/Admin_users";
+import AdminOrders from "./pages/AdminPage/Admin_orders";
+import AdminMessages from "./pages/AdminPage/Admin_messages";
 import ArtistsPage from "./pages/AdminPage/ArtistsPage";
 import LoginPage from "./pages/AdminPage/LoginPage";
 import ForgotPassword from "./pages/AdminPage/ForgotPassword";
@@ -24,7 +24,7 @@ export default function AdminApp() {
         path="/dashboard"
         element={
           <ProtectedRoute>
-            <Dashboard_Admin />
+            <DashboardAdmin />
           </ProtectedRoute>
         }
       />
@@ -40,7 +40,7 @@ export default function AdminApp() {
         path="/users"
         element={
           <ProtectedRoute>
-            <Admin_users />
+            <AdminUsers />
           </ProtectedRoute>
         }
       />
@@ -56,7 +56,7 @@ export default function AdminApp() {
         path="/orders"
         element={
           <ProtectedRoute>
-            <Admin_orders />
+            <AdminOrders />
           </ProtectedRoute>
         }
       />
@@ -64,7 +64,7 @@ export default function AdminApp() {
         path="/messages"
         element={
           <ProtectedRoute>
-            <Admin_messages />
+            <AdminMessages />
           </ProtectedRoute>
         }
       />
