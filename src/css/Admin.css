@@ -1,4 +1,4 @@
-/* 🌟 RESET & BASE */
+/* RESET & BASE */
 * { box-sizing: border-box; }
 
 html, body, #root {
@@ -17,7 +17,7 @@ html, body, #root {
   flex-direction: column;
 }
 
-/* 🌟 HEADER */
+/*  HEADER */
 .admin-header {
   height: 92px;
   display: flex;
@@ -32,7 +32,7 @@ html, body, #root {
   z-index: 50;
 }
 
-/* ✅ Brand section — logo now aligned LEFT */
+/*  Brand section — logo now aligned LEFT */
 .brand {
   flex: 0 0 auto;
   display: flex;
@@ -40,7 +40,7 @@ html, body, #root {
   justify-content: flex-start;
 }
 
-/* ✅ Bigger logo */
+/*  Bigger logo */
 .brand-logo {
   width: 130px;
   height: 90px;
@@ -48,7 +48,7 @@ html, body, #root {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* 🌟 NAVIGATION */
+/*  NAVIGATION */
 .top-nav {
   display: flex;
   gap: 18px;
@@ -78,29 +78,8 @@ html, body, #root {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* 🌟 ADD BUTTON (Top Right Corner) */
-/* .btn-add {
-  position: absolute;
-  right: 2rem;
-  top: 1.5rem;
-  background: linear-gradient(145deg, #b5825b, #9e6f4c);
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
 
-.btn-add:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(145deg, #ffffff, #a48c7c);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-} */
-
-/* 🌟 MAIN CONTENT */
+/*  MAIN CONTENT */
 .admin-main {
   padding: 28px;
   flex: 1;
@@ -110,8 +89,7 @@ html, body, #root {
   backdrop-filter: blur(6px);
 }
 
-/* 🌟 CONTROLS */
-/* 🌟 ADD BUTTON (Aligned with Search Section) */
+
 .controls {
   display: flex;
   justify-content: space-between;
@@ -170,7 +148,7 @@ html, body, #root {
   max-width: 420px;
 }
 
-/* 🌟 BUTTON */
+/* BUTTON */
 .btn {
   padding: 10px 16px;
   border-radius: 12px;
@@ -190,7 +168,7 @@ html, body, #root {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* 🌟 TABLE SECTION */
+/* TABLE SECTION */
 .table-section {
   display: flex;
   flex-direction: column;
@@ -207,7 +185,7 @@ html, body, #root {
   backdrop-filter: blur(6px);
 }
 
-/* 🌟 SCROLLABLE TABLE (fixed height) */
+/* SCROLLABLE TABLE (fixed height) */
 .scrollable-table {
   max-height: 520px;
   height: 520px;
@@ -216,14 +194,18 @@ html, body, #root {
   position: relative;
 }
 
-/* 🌟 USERS TABLE */
+/* USERS TABLE */
 .users-table {
   width: 100%;
   border-collapse: collapse;
   min-width: 760px;
   table-layout: fixed;
+  
 }
-
+.users-table tbody{
+  align-items: center;
+  
+}
 .users-table th,
 .users-table td {
   text-align: left;
@@ -251,7 +233,7 @@ html, body, #root {
   transition: all 0.15s ease;
 }
 
-/* 🌟 EDIT INPUTS */
+/* EDIT INPUTS */
 .edit-input {
   width: 100%;
   padding: 6px 8px;
@@ -268,7 +250,7 @@ html, body, #root {
   outline: none;
 }
 
-/* 🌟 ACTION BUTTONS */
+/*  ACTION BUTTONS */
 .action-btn {
   padding: 8px 12px;
   margin: 0 4px;
@@ -281,6 +263,22 @@ html, body, #root {
   transition: all 0.25s ease;
 }
 
+.users-table td {
+  white-space: nowrap;
+}
+
+.users-table td {
+  gap: 8px; 
+}
+
+@media (max-width: 768px) {
+  .users-table td {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+
 .action-btn.edit { background: #b59b76; }
 .action-btn.save { background: #6ba86b; }
 .action-btn.delete { background: #f26b6b; }
@@ -291,7 +289,7 @@ html, body, #root {
   opacity: 0.95;
 }
 
-/* 🌟 EMPTY ROW */
+/*  EMPTY ROW */
 .empty-row td {
   text-align: center;
   padding: 200px 16px;
@@ -301,7 +299,7 @@ html, body, #root {
   border-radius: 10px;
 }
 
-/* 🌟 OVERLAY STYLES */
+/*  OVERLAY STYLES */
 .overlay {
   position: fixed;
   top: 0;
@@ -381,7 +379,7 @@ html, body, #root {
   margin-top: 1rem;
 }
 
-/* 🌟 RESPONSIVE */
+/*  RESPONSIVE */
 @media (max-width: 980px) {
   .admin-header {
     flex-direction: column;
@@ -420,7 +418,6 @@ html, body, #root {
 }
 
 /* DASHBOARD */
-/* 🌊 DASHBOARD STYLES */
 .dashboard-root {
   min-height: 100vh;
   display: flex;
@@ -590,7 +587,7 @@ html, body, #root {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 🌐 RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN */
 
 /* --- Tablet (≤ 1024px) --- */
 @media (max-width: 1024px) {
@@ -706,4 +703,82 @@ html, body, #root {
   .stat-card p {
     font-size: 1.2rem;
   }
+}
+
+/* status on order page */
+
+/* Status badge styles */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+}
+
+/* Color variants */
+.status-pending {
+  background-color: #f5a623; /* orange-yellow */
+}
+
+.status-processing {
+  background-color: #007bff; /* blue */
+}
+
+.status-shipped {
+  background-color: #17a2b8; /* cyan */
+}
+
+.status-completed {
+  background-color: #28a745; /* green */
+}
+
+.status-cancelled {
+  background-color: #dc3545; /* red */
+}
+
+/* src/pages/AdminPage/Admin_orders.js */
+.message-box {
+  background: rgba(247, 235, 223, 0.8);
+  border: 1px solid #d0bda3;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0 20px 0;
+  color: #372414;
+  box-shadow: inset 0 2px 4px rgba(55, 36, 20, 0.1);
+}
+
+/*  RESPONSE CONTAINER */
+.response-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 250, 245, 0.9);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #d0bda3;
+  margin-top: 16px;
+  box-shadow: inset 0 2px 4px rgba(55, 36, 20, 0.08);
+}
+
+.response-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #c9b7a3;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.95);
+  font-family: inherit;
+  font-size: 14px;
+  color: #372414;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.response-input:focus {
+  border-color: #b5825b;
+  box-shadow: 0 0 6px rgba(181, 130, 91, 0.5);
+  outline: none;
 }

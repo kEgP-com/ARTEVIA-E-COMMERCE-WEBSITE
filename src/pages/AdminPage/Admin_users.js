@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../css/Admin.css";
-import { FaUserCircle, FaCog } from "react-icons/fa";
+import { FaUserCircle, FaCog, FaBars } from "react-icons/fa";
 import logo from "../../images/logo/logo_clear.png";
 import wavebg from "../../images/images/login_bg.png";
 import usersData from "../../data/users.json";
 
 export default function AdminUsers() {
+  const navigate = useNavigate();
+
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
   const [sortOrder, setSortOrder] = useState("none");
@@ -16,22 +19,33 @@ export default function AdminUsers() {
   const [newUsers, setNewUsers] = useState([]);
   const [showSettings, setShowSettings] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
-
-  const toggleSettings = () => {
-	setShowSettings(!showSettings);
-	setShowProfile(false);
-  };
-
-  const toggleProfile = () => {
-	setShowProfile(!showProfile);
-	setShowSettings(false);
-  };
-
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const toggleNav = () => setIsNavOpen(!isNavOpen);
   useEffect(() => {
     setUsers(usersData);
   }, []);
 
+  // --- DROPDOWNS ---
+  const toggleSettings = () => {
+    setShowSettings(!showSettings);
+    setShowProfile(false);
+  };
 
+  const toggleProfile = () => {
+    setShowProfile(!showProfile);
+    setShowSettings(false);
+  };
+
+  // --- NAVIGATION ---
+  const goTo = (path) => navigate(path);
+
+  const handleLogout = () => {
+    // Example: clear session if needed
+    // localStorage.removeItem("adminToken");
+    navigate("/admin/login");
+  };
+
+  // --- FILTERING & SORTING ---
   const filtered = useMemo(() => {
     let data = [...users];
     const q = query.trim().toLowerCase();
@@ -56,6 +70,7 @@ export default function AdminUsers() {
     return data;
   }, [users, query, sortOrder]);
 
+  // --- CRUD FUNCTIONS ---
   const handleDelete = (id) => {
     if (!window.confirm("Delete this user?")) return;
     setUsers((prev) => prev.filter((u) => u.id !== id));
@@ -77,12 +92,19 @@ export default function AdminUsers() {
     setEditingId(null);
   };
 
-  const handleSearch = () => {};
-
-  // ➕ ADD USER OVERLAY
+  // --- ADD USER OVERLAY ---
   const handleAddClick = () => {
     setShowOverlay(true);
-    setNewUsers([{ id: Date.now(), name: "", email: "", address: "", contact: "", age: "" }]);
+    setNewUsers([
+      {
+        id: Date.now(),
+        name: "",
+        email: "",
+        address: "",
+        contact: "",
+        age: "",
+      },
+    ]);
   };
 
   const handleAddCountChange = (count) => {
@@ -111,45 +133,67 @@ export default function AdminUsers() {
   };
 
   return (
-    <div className="admin-root" style={{ backgroundImage: `url(${wavebg})` }}>
+    <div
+      className="admin-root"
+      style={{
+        backgroundImage: `url(${wavebg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* HEADER */}
-	  <header className="dashboard-header">
-		<div className="brand">
-		  <img src={logo} alt="logo" className="brand-logo" />
-		</div>
+      <header className="dashboard-header">
+        <div className="brand">
+          <img src={logo} alt="logo" className="brand-logo" />
+        </div>
 
-		<nav className="dashboard-nav">
-		  <button className="nav-item">DASHBOARD</button>
-		  <button className="nav-item active">USERS</button>
-		  <button className="nav-item">ARTS</button>
-		  <button className="nav-item">ARTISTS</button>
-		  <button className="nav-item">ABOUT</button>
-		  <button className="nav-item">MESSAGES</button>
-		</nav>
+        <button className="hamburger" onClick={toggleNav}>
+          <FaBars />
+        </button>
 
-		{/* ICONS */}
-		<div className="icon-section">
-		  <FaCog className="icon-btn" onClick={toggleSettings} />
-		  <FaUserCircle className="icon-btn" onClick={toggleProfile} />
+        <nav className={`dashboard-nav ${isNavOpen ? "show" : ""}`}>
+          <button className="nav-item" onClick={() => navigate("/admin/dashboard")}>
+            DASHBOARD
+          </button>
+          <button className="nav-item active" onClick={() => navigate("/admin/users")}>
+            USERS
+          </button>
+          <button className="nav-item" onClick={() => navigate("/admin/arts")}>
+            ARTS
+          </button>
+          <button className="nav-item" onClick={() => navigate("/admin/artists")}>
+            ARTISTS
+          </button>
+          <button className="nav-item" onClick={() => navigate("/admin/orders")}>
+            ORDERS
+          </button>
+          <button className="nav-item" onClick={() => navigate("/admin/messages")}>
+            MESSAGES
+          </button>
+        </nav>
+        <div className="icon-section">
+          <div className="icon-wrapper">
+            <FaCog className="icon-btn" onClick={toggleSettings} />
+            {showSettings && (
+              <div className="dropdown-menu show-dropdown">
+                <button>Account Settings</button>
+                <button>Preferences</button>
+                <button onClick={() => navigate("/admin/login")}>Logout</button>
+              </div>
+            )}
+          </div>
 
-		  {/* SETTINGS MENU */}
-		  {showSettings && (
-			<div className="dropdown-menu">
-			  <button>Account Settings</button>
-			  <button>Preferences</button>
-			  <button>Logout</button>
-			</div>
-		  )}
-
-		  {/* PROFILE MENU */}
-		  {showProfile && (
-			<div className="dropdown-menu">
-			  <button>View Profile</button>
-			  <button>Edit Profile</button>
-			</div>
-		  )}
-		</div>
-	  </header>
+          <div className="icon-wrapper">
+            <FaUserCircle className="icon-btn" onClick={toggleProfile} />
+            {showProfile && (
+              <div className="dropdown-menu show-dropdown">
+                <button>View Profile</button>
+                <button>Edit Profile</button>
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
 
       {/* MAIN CONTENT */}
       <main className="admin-main">
@@ -172,12 +216,9 @@ export default function AdminUsers() {
               <option value="z-a">Z–A</option>
               <option value="age">By Age</option>
             </select>
-            <button className="btn btn-search" onClick={handleSearch}>
-              Search
-            </button>
+            <button className="btn btn-search">Search</button>
           </div>
 
-          {/* Add Button - far right */}
           <div className="controls-right">
             <button className="btn-add" onClick={handleAddClick}>
               Add User
@@ -301,7 +342,7 @@ export default function AdminUsers() {
         </section>
       </main>
 
-      {/* 🧩 Overlay for adding users */}
+      {/* Overlay for adding users */}
       {showOverlay && (
         <div className="overlay">
           <div className="overlay-content">

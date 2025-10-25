@@ -3,12 +3,15 @@ import "../../css/login.css";
 import logo from "../../images/logo/logo.png";
 import wavebg from "../../images/images/login_bg.png";
 import { useNavigate } from "react-router-dom";
-import Overlay from "../../components/Overlay"; 
+import Overlay from "../../components/Overlay";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
+  const [showNewPass, setShowNewPass] = useState(false); // Toggle new password
+  const [showConfirmPass, setShowConfirmPass] = useState(false); // Toggle confirm
   const [showOverlay, setShowOverlay] = useState(false);
   const navigate = useNavigate();
 
@@ -23,12 +26,12 @@ export default function ForgotPassword() {
   return (
     <div className="view" style={{ backgroundImage: `url(${wavebg})` }}>
       <div className="column">
-        {/* Logo */}
+        {/*  Logo */}
         <div className="logo-container">
           <img src={logo} alt="Logo" className="logo-image" />
         </div>
 
-        {/* Input Fields */}
+        {/* Email */}
         <input
           placeholder="Enter email or username"
           value={email}
@@ -36,23 +39,40 @@ export default function ForgotPassword() {
           className="input"
         />
 
-        <input
-          placeholder="New Password"
-          type="password"
-          value={newPass}
-          onChange={(e) => setNewPass(e.target.value)}
-          className="input2"
-        />
+        {/*  New Password */}
+        <div className="password-container">
+          <input
+            placeholder="New Password"
+            type={showNewPass ? "text" : "password"}
+            value={newPass}
+            onChange={(e) => setNewPass(e.target.value)}
+            className="input2 password-input"
+          />
+          <span
+            className="eye-icon"
+            onClick={() => setShowNewPass(!showNewPass)}
+          >
+            {showNewPass ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
 
-        <input
-          placeholder="Confirm Password"
-          type="password"
-          value={confirmPass}
-          onChange={(e) => setConfirmPass(e.target.value)}
-          className="input2"
-        />
-
-        {/* Button */}
+        {/*  Confirm Password */}
+        <div className="password-container">
+          <input
+            placeholder="Confirm Password"
+            type={showConfirmPass ? "text" : "password"}
+            value={confirmPass}
+            onChange={(e) => setConfirmPass(e.target.value)}
+            className="input2 password-input"
+          />
+          <span
+            className="eye-icon"
+            onClick={() => setShowConfirmPass(!showConfirmPass)}
+          >
+            {showConfirmPass ? <FaEyeSlash /> : <FaEye />}
+          </span>
+        </div>
+        {/*  Button */}
         <button className="button" onClick={handleReset}>
           <span className="text2">RESET PASSWORD</span>
         </button>
@@ -67,7 +87,7 @@ export default function ForgotPassword() {
         </span>
       </div>
 
-      {/* ✅ Reusable Overlay Component */}
+
       {showOverlay && (
         <Overlay
           title="Password has been reset!"

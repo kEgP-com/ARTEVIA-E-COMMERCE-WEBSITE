@@ -278,3 +278,33 @@ html, body {
     font-size: 18px;
   }
 }
+/* =============================== */
+/* INPUT WITH EYE ICON INSIDE  */
+/* =============================== */
+
+.password-container {
+  position: relative;
+  width: 400px; /* match input width */
+  margin-top: 10px;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 45px; /* leave room for icon */
+  box-sizing: border-box;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.eye-icon:hover {
+  color: #333;
+}

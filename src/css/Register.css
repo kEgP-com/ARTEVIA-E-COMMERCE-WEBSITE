@@ -1,5 +1,4 @@
-/* 🧼 RESET DEFAULTS */
-/* 🧼 RESET DEFAULTS */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@ html, body {
 }
 
 
-/* 🌅 BACKGROUND VIEW */
+/* BACKGROUND VIEW */
 .view {
   display: flex;
   justify-content: center;
@@ -27,7 +26,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* 🧩 MAIN CARD */
+/*MAIN CARD */
 .column {
   width: 528px;
   display: flex;
@@ -41,7 +40,7 @@ html, body {
   text-align: center;
 }
 
-/* 🧾 HEADER TEXT */
+/* HEADER TEXT */
 .column2 {
   display: flex;
   flex-direction: column;
@@ -268,5 +267,115 @@ html, body {
   .text4,
   .text5 {
     font-size: 14px;
+  }
+}
+/* EXISTING STYLES ... (keep everything above unchanged) */
+
+/* ✅ Fix Terms and Policy alignment + checkmark size */
+.column3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Align text and checkmark */
+.terms-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+  flex-wrap: wrap; /* allows wrapping if screen is narrow */
+}
+
+.text5 {
+  margin: 0;
+  line-height: 1.5;
+  width: auto;
+  color: #000;
+  text-align: center;
+}
+
+.terms-container a {
+  color: #825A3C;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.terms-container a:hover {
+  text-decoration: underline;
+}
+
+
+.checkmark {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.checkmark:hover {
+  transform: scale(1.15);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .column {
+    width: 90%;
+    padding: 50px 0;
+    border-radius: 35px;
+  }
+
+  .input,
+  .input2,
+  .input3,
+  .button,
+  .row-view,
+  .row-view2 {
+    width: 80%;
+  }
+
+  /* scale down checkmark slightly for tablets */
+  .checkmark {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .column {
+    width: 95%;
+    padding: 40px 0;
+    border-radius: 25px;
+  }
+
+  .input,
+  .input2,
+  .input3,
+  .button,
+  .row-view,
+  .row-view2 {
+    width: 70%;
+    font-size: 16px;
+  }
+
+  .text,
+  .text2,
+  .text4,
+  .text5 {
+    font-size: 14px;
+  }
+
+  /* ✅ smaller icon on phones */
+  .checkmark {
+    width: 40px;
+    height: 40px;
   }
 }

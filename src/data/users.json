@@ -70,5 +70,53 @@
     "address": "Cabuyao, Laguna",
     "contact": "09778889999",
     "age": 28
+  },
+  {
+    "id": 10,
+    "name": "James Rivera",
+    "email": "james.rivera@example.com",
+    "address": "Calamba, Laguna",
+    "contact": "09361239876",
+    "age": 26
+  },
+  {
+    "id": 11,
+    "name": "Katrina Mendoza",
+    "email": "katrina.mendoza@example.com",
+    "address": "Los Baños, Laguna",
+    "contact": "09172349876",
+    "age": 24
+  },
+  {
+    "id": 12,
+    "name": "Leo Gutierrez",
+    "email": "leo.gutierrez@example.com",
+    "address": "Sta. Rosa, Laguna",
+    "contact": "09453451234",
+    "age": 33
+  },
+  {
+    "id": 13,
+    "name": "Monica Flores",
+    "email": "monica.flores@example.com",
+    "address": "Binan, Laguna",
+    "contact": "09569876543",
+    "age": 22
+  },
+  {
+    "id": 14,
+    "name": "Nathan Cruz",
+    "email": "nathan.cruz@example.com",
+    "address": "San Pedro, Laguna",
+    "contact": "09779812345",
+    "age": 31
+  },
+  {
+    "id": 15,
+    "name": "Olivia Garcia",
+    "email": "olivia.garcia@example.com",
+    "address": "Cabuyao, Laguna",
+    "contact": "09663456789",
+    "age": 27
   }
 ]

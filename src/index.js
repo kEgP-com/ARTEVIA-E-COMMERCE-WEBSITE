@@ -1,20 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import Login from './pages/LoginPage/Login';
-import Register from './pages/LoginPage/Register';
-import ForgotPassword from './pages/LoginPage/ForgotPassword';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-// import DashboardPage from '../pages/AdminPage/Dashboard_Admin';
-import AdminUsers from './pages/AdminPage/Admin_users';
-import DashboardPage from './pages/AdminPage/Dashboard_Admin';
+import App from "./App"; // Customer App
+import AdminApp from "./AdminApp"; // Admin App
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DashboardPage />
+    <BrowserRouter>
+      <Routes>
+        {/* Customer Routes */}
+        <Route path="/customer/*" element={<App />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/*" element={<AdminApp />} />
+
+        {/* Redirect everything else */}
+        <Route path="*" element={<Navigate to="/customer" />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
