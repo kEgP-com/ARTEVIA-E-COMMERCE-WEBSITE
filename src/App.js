@@ -1,22 +1,19 @@
-// src/App.js (FINAL VERSION - Walang Homepage)
 
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Lahat ng imports ay mananatili, kasama ang 'HomePage' import kung sakali
-// na ito ay ginagamit pa sa ibang lugar, ngunit hindi ito gagamitin sa Routes.
+// All imports
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import ProductDetails from './ProductPage/ProductDetails'; 
-import ProductsPage from './ProductPage/ProductsPage'; // THE MAIN LANDING PAGE
+import ProductsPage from './ProductPage/ProductsPage';
 
 // Category Specific Pages
 import DigitalArt from './ProductPage/DigitalArt'; 
 import Handmade from './ProductPage/Handmade';     
 import Sketch from './ProductPage/Sketch';        
-
-// ... (Kung may iba pang imports) ...
-
+import Painting from './ProductPage/Painting';      // NEW IMPORT
+import Sculpture from './ProductPage/Sculpture';    // NEW IMPORT
 
 function App() {
   // State for Modal Management
@@ -40,7 +37,7 @@ function App() {
         
         <main className="content">
           <Routes>
-            {/* 1. LANDING PAGE: ProductsPage ang gagamitin sa root path (/) */}
+            {/* 1. LANDING PAGE: ProductsPage */}
             <Route path="/" element={<ProductsPage />} /> 
             
             {/* 2. ALIAS FOR PRODUCTS PAGE */}
@@ -58,6 +55,15 @@ function App() {
             <Route 
                 path="/ProductPage/Sketch" 
                 element={renderCategoryPage(Sketch)}
+            />
+            {/* NEW ROUTES FOR PAINTING AND SCULPTURE */}
+            <Route 
+                path="/categories/Painting" 
+                element={renderCategoryPage(Painting)}
+            />
+            <Route 
+                path="/categories/Sculpture" 
+                element={renderCategoryPage(Sculpture)}
             />
           </Routes>
         </main>

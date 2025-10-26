@@ -1,23 +1,28 @@
-/* src/components/CategoryPage.css */
-
 .category-page-container {
   padding: 40px 10%;
   text-align: center;
   position: relative;
   min-height: 80vh;
-  background-color: #e0e0e0; /* Gray-beige background */
-  overflow: hidden; /* Important for containing the wave */
+  background-color: #e0e0e0;
+  overflow: hidden;
 }
 
-.category-title-wrapper {
+.category-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 50px;
   position: relative;
   z-index: 2;
 }
 
+.category-title-wrapper {
+  text-align: center;
+}
+
 .category-title-button {
   padding: 12px 40px;
-  background-color: #5d4037; /* Dark brown/maroon */
+  background-color: #5d4037;
   color: white;
   border: none;
   border-radius: 6px;
@@ -26,45 +31,89 @@
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   cursor: default;
+  /* Ensure single line */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Product Grid (same as ProductList but renamed for clarity) */
+/* Product Grid */
+/* Add to your Digital.css */
 .product-grid-category {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns based on the design */
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px 60px;
   max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  /* Ensure consistent grid items */
+  align-items: start;
 }
 
-/* Blank Frames (for the incomplete rows in the design image) */
-.product-card-blank-frame {
-    /* Style to mimic the empty product cards */
-    aspect-ratio: 1 / 1.3;
-    padding: 10px;
-    background-color: #f7f3ed; /* Inner mat color (light beige) */
-    border: 5px solid #5d4037; /* Frame color */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+.product-grid-category > * {
+  height: 100%;
 }
 
+/* Ensure all product cards have same dimensions */
+.product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-/* --- Wave Background V2 (Adapted to the new color/position) --- */
+.product-card-image-container {
+  flex-shrink: 0;
+}
+
+.product-card-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* Back to Categories Button - Lower Left */
+.back-to-categories-container {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 3;
+}
+
+.back-to-categories-btn {
+  padding: 12px 25px;
+  background-color: #8d6e63;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.back-to-categories-btn:hover {
+  background-color: #5d4037;
+  transform: translateY(-2px);
+}
+
+/* Wave Background */
 .wave-placeholder-category {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%; 
-  /* The design has the wave over a tan background */
-  background-color: #d6c2a9; /* Tan background behind the wave */
-  background-image: url('../images/images/wavebg.png'); /* Use your original wave image */
+  height: 100%;
+  background-color: #d6c2a9;
+  background-image: url('../images/images/wavebg.png');
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
-  z-index: 1; 
-  /* Masking the wave to blend with the tan background */
+  z-index: 1;
   -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
   mask-image: linear-gradient(to top, black 80%, transparent 100%);
 }
