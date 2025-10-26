@@ -11,15 +11,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-
         <Route path="/customer/*" element={<App />} />
-
         <Route path="/admin/*" element={<AdminApp />} />
-
-    
-        <Route path="*" element={<Navigate to="/customer" />} />
+        
+        <Route path="*" element={<Navigate to="/customer/homepage" />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
-

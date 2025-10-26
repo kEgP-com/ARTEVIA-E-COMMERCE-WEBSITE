@@ -373,7 +373,7 @@ html, body {
     font-size: 14px;
   }
 
-  /* ✅ smaller icon on phones */
+  /* smaller icon on phones */
   .checkmark {
     width: 40px;
     height: 40px;
