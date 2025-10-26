@@ -5,7 +5,7 @@ import "../../css/Category.css";
 import Sketch from "../../data/IllustrationSketch.json";
 import ProductCard from "../../components/ProductCard";
 
-// ✅ Preload all images in src/images and its subfolders
+
 const images = require.context("../../images", true);
 
 function IllustrationSketch() {
@@ -16,7 +16,7 @@ function IllustrationSketch() {
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
 
-  // ✅ Helper: resolve image safely
+ 
   const getImagePath = (path) => {
     try {
       const cleanPath = path.replace(/^(\.\.\/)+images\//, "");
@@ -27,7 +27,7 @@ function IllustrationSketch() {
     }
   };
 
-  // ✅ Apply search + filter
+
   const filteredSketches = Sketch.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
@@ -42,7 +42,7 @@ function IllustrationSketch() {
         <section className="sculpture-hero">
           <h1>Illustrations & Sketch</h1>
 
-          {/* 🔍 Filters */}
+    
           <div className="sculpture-filters">
             <input
               type="text"
@@ -63,7 +63,7 @@ function IllustrationSketch() {
             </select>
           </div>
 
-          {/* 🖼️ Product Grid */}
+    
           <div className="discovery-grid">
             {filteredSketches.length > 0 ? (
               filteredSketches.map((art) => (
@@ -82,7 +82,7 @@ function IllustrationSketch() {
 
       <Footer />
 
-      {/* 🔍 Overlay View */}
+   
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>

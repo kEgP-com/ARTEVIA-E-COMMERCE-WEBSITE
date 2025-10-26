@@ -13,7 +13,7 @@ function Painting() {
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
 
-  // ✅ Filter paintings based on search and category
+  
   const filteredPaintings = paintingData.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
@@ -27,7 +27,7 @@ function Painting() {
         <section className="painting-hero">
           <h1>Paintings</h1>
 
-          {/* ✅ Filters */}
+        
           <div className="painting-filters">
             <input
               type="text"
@@ -50,14 +50,14 @@ function Painting() {
             <button className="painting-search-btn">Search</button>
           </div>
 
-          {/* ✅ Painting Cards */}
+
           <div className="discovery-grid">
             {filteredPaintings.length > 0 ? (
               filteredPaintings.map((art) => (
                 <ProductCard
                   key={art.id}
                   item={art}
-                  categoryFolder="Painting" // ✅ folder in src/images/Painting/
+                  categoryFolder="Painting" 
                   onView={handleView}
                   onAddToCart={() => console.log("Added:", art.name)}
                 />
@@ -71,7 +71,7 @@ function Painting() {
 
       <Footer />
 
-      {/* ✅ Overlay Modal */}
+
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>

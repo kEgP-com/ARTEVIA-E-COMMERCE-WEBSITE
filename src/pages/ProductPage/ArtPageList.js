@@ -5,7 +5,7 @@ import "../../css/Category.css";
 import productList from "../../data/productList.json";
 import ProductCard from "../../components/ProductCard";
 
-// ✅ Import all images in /src/images folder
+
 const images = require.context("../../images", true);
 
 function ArtPageList() {
@@ -17,7 +17,7 @@ function ArtPageList() {
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
 
-  // ✅ Helper to safely load image
+
   const getImagePath = (path) => {
     try {
       const cleanPath = path.replace(/^(\.\.\/)+images\//, "");
@@ -28,7 +28,7 @@ function ArtPageList() {
     }
   };
 
-  // ✅ Filter + Sort
+
   let filteredArts = productList.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
