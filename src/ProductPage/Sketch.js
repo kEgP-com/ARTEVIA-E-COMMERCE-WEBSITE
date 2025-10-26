@@ -1,56 +1,69 @@
-// src/ProductPage/Sketch.js
-
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard';
-import ProductsData from './AllProducts'; 
-import ProductDetails from './ProductDetails'; 
-import '../css/Digital.css'; // Gamit ang shared CSS file for categories
+import ProductsData from './AllProducts';
+import '../css/Digital.css';
 
-const SKETCH_CATEGORY = "Illustration & Sketch"; 
+const SKETCH_CATEGORY = "Illustration & Sketch";
 
-const Sketch = ({ onProductClick, selectedProductId, closeProductModal }) => { 
-  
-    const [searchTerm, setSearchTerm] = useState('');
-    const [categoryProducts, setCategoryProducts] = useState([]);
+const Sketch = ({ onProductClick, selectedProductId, closeProductModal }) => {
+  const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [categoryProducts, setCategoryProducts] = useState([]);
 
-    useEffect(() => {
-        // I-filter ang products gamit ang "Illustration & Sketch"
-        const filtered = ProductsData.filter(
-            product => product.category.toLowerCase() === SKETCH_CATEGORY.toLowerCase()
-        );
-        
-        const finalFiltered = filtered.filter(product =>
-            product.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-
-        setCategoryProducts(finalFiltered);
-        
-    }, [searchTerm]);
-
-    return (
-        <div className="category-page-container">
-            <div className="category-title-wrapper">
-                <button className="category-title-button">{SKETCH_CATEGORY}</button>
-            </div>
-
-            <div className="product-grid-category">
-                {categoryProducts.map(product => (
-                    <ProductCard 
-                        key={product.id} 
-                        product={product} 
-                        onDetailsClick={onProductClick} // Bubuksan ang modal
-                    />
-                ))}
-                {/* Blank placeholders */}
-                {Array(6 - (categoryProducts.length % 6)).fill(0).map((_, index) => (
-                    <div key={`blank-${index}`} className="product-card-blank-frame"></div>
-                ))}
-            </div>
-            
-            <div className="wave-placeholder-category"></div>
-            
-        </div>
+  useEffect(() => {
+    const filtered = ProductsData.filter(
+      product => product.category.toLowerCase() === SKETCH_CATEGORY.toLowerCase()
     );
+    
+    const finalFiltered = filtered.filter(product =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setCategoryProducts(finalFiltered);
+  }, [searchTerm]);
+
+  const handleBackToCategories = () => {
+    navigate('/');
+  };
+
+  return (
+    <div className="category-page-container">
+      {/* Only Category Title - No CATEGORIES header or search bar */}
+      <div className="category-header">
+        <div className="category-title-wrapper">
+          <button className="category-title-button">{SKETCH_CATEGORY}</button>
+        </div>
+      </div>
+
+      {/* Product Grid */}
+      <div className="product-grid-category">
+        {categoryProducts.map(product => (
+          <ProductCard 
+            key={product.id} 
+            product={product} 
+            onDetailsClick={onProductClick}
+          />
+        ))}
+        {/* Blank placeholders */}
+        {Array(6 - (categoryProducts.length % 6)).fill(0).map((_, index) => (
+          <div key={`blank-${index}`} className="product-card-blank-frame"></div>
+        ))}
+      </div>
+
+      {/* Back to Categories Button - Lower Left */}
+      <div className="back-to-categories-container">
+        <button 
+          className="back-to-categories-btn"
+          onClick={handleBackToCategories}
+        >
+          ← Back to Categories
+        </button>
+      </div>
+      
+      <div className="wave-placeholder-category"></div>
+    </div>
+  );
 };
 
 export default Sketch;

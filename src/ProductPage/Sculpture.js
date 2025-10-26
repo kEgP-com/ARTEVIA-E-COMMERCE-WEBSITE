@@ -4,16 +4,16 @@ import ProductCard from './ProductCard';
 import ProductsData from './AllProducts';
 import '../css/Digital.css';
 
-const DIGITAL_ART_CATEGORY = "Digital Art";
+const SCULPTURE_CATEGORY = "Sculpture";
 
-const DigitalArt = ({ onProductClick, selectedProductId, closeProductModal }) => {
+const Sculpture = ({ onProductClick, selectedProductId, closeProductModal }) => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryProducts, setCategoryProducts] = useState([]);
 
   useEffect(() => {
     const filtered = ProductsData.filter(
-      product => product.category.toLowerCase() === DIGITAL_ART_CATEGORY.toLowerCase()
+      product => product.category.toLowerCase() === SCULPTURE_CATEGORY.toLowerCase()
     );
     
     const finalFiltered = filtered.filter(product =>
@@ -32,7 +32,7 @@ const DigitalArt = ({ onProductClick, selectedProductId, closeProductModal }) =>
       {/* Only Category Title - No CATEGORIES header or search bar */}
       <div className="category-header">
         <div className="category-title-wrapper">
-          <button className="category-title-button">{DIGITAL_ART_CATEGORY}</button>
+          <button className="category-title-button">{SCULPTURE_CATEGORY}</button>
         </div>
       </div>
 
@@ -66,4 +66,4 @@ const DigitalArt = ({ onProductClick, selectedProductId, closeProductModal }) =>
   );
 };
 
-export default DigitalArt;
+export default Sculpture;
