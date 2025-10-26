@@ -5,6 +5,9 @@ import "../../css/Category.css";
 import Sketch from "../../data/IllustrationSketch.json";
 import ProductCard from "../../components/ProductCard";
 
+
+const images = require.context("../../images", true);
+
 function IllustrationSketch() {
   const [selectedArt, setSelectedArt] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,7 +17,18 @@ function IllustrationSketch() {
   const closeOverlay = () => setSelectedArt(null);
 
  
-  const filteredSculptures = Sketch.filter((art) => {
+  const getImagePath = (path) => {
+    try {
+      const cleanPath = path.replace(/^(\.\.\/)+images\//, "");
+      return images(`./${cleanPath}`);
+    } catch (err) {
+      console.warn("Image not found:", path);
+      return "";
+    }
+  };
+
+
+  const filteredSketches = Sketch.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
     return matchesSearch && matchesCategory;
@@ -23,16 +37,16 @@ function IllustrationSketch() {
   return (
     <>
       <Navbar />
-      <div className="sculpture-page">
 
+      <div className="sculpture-page">
         <section className="sculpture-hero">
-          <h1>Illustrations Sketch</h1>
+          <h1>Illustrations & Sketch</h1>
 
     
           <div className="sculpture-filters">
             <input
               type="text"
-              placeholder="Search sculptures..."
+              placeholder="Search artworks..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="sculpture-search-input"
@@ -43,28 +57,24 @@ function IllustrationSketch() {
               onChange={(e) => setFilterCategory(e.target.value)}
             >
               <option value="All">All Categories</option>
-              <option value="Sculpture">Sculpture</option>
-              <option value="Marble">Marble</option>
-              <option value="Wood">Wood</option>
-              <option value="Steel">Steel</option>
+              <option value="Sketch">Sketch</option>
+              <option value="Illustration">Illustration</option>
+              <option value="Concept Art">Concept Art</option>
             </select>
-            <button className="sculpture-search-btn">Search</button>
           </div>
 
-
+    
           <div className="discovery-grid">
-            {filteredSculptures.length > 0 ? (
-              filteredSculptures.map((art) => (
+            {filteredSketches.length > 0 ? (
+              filteredSketches.map((art) => (
                 <ProductCard
                   key={art.id}
                   item={art}
-                  categoryFolder="Sculpture"
                   onView={handleView}
-                  onAddToCart={() => console.log("Added:", art.name)}
                 />
               ))
             ) : (
-              <p className="no-results">No sculptures found.</p>
+              <p className="no-results">No artworks found.</p>
             )}
           </div>
         </section>
@@ -72,18 +82,18 @@ function IllustrationSketch() {
 
       <Footer />
 
-
+   
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeOverlay}>
-              ×
-            </button>
+            <button className="close-btn" onClick={closeOverlay}>×</button>
+
             <img
-              src={require(`../../images/Sculpture/${selectedArt.imageUrl.split("/").pop()}`)}
+              src={getImagePath(selectedArt.imageUrl)}
               alt={selectedArt.name}
               className="overlay-image"
             />
+
             <h2>{selectedArt.name}</h2>
             <p><strong>{selectedArt.artist}</strong></p>
             <p><em>{selectedArt.category}</em></p>

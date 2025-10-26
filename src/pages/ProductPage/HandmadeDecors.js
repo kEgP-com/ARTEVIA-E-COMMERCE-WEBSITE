@@ -5,6 +5,9 @@ import "../../css/Category.css";
 import handmadeDecors from "../../data/HandmadeDecors.json";
 import ProductCard from "../../components/ProductCard";
 
+
+const images = require.context("../../images", true);
+
 function HandmadeDecors() {
   const [selectedArt, setSelectedArt] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,8 +16,18 @@ function HandmadeDecors() {
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
 
- 
-  const filteredSculptures = handmadeDecors.filter((art) => {
+
+  const getImagePath = (relativePath) => {
+    try {
+      const cleanPath = relativePath.replace(/^(\.\.\/)+images\//, "");
+      return images(`./${cleanPath}`);
+    } catch (err) {
+      console.warn("Image not found:", relativePath);
+      return "";
+    }
+  };
+
+  const filteredDecors = handmadeDecors.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
     return matchesSearch && matchesCategory;
@@ -23,48 +36,44 @@ function HandmadeDecors() {
   return (
     <>
       <Navbar />
+
       <div className="sculpture-page">
-
         <section className="sculpture-hero">
-          <h1>Hand Made Decorations</h1>
+          <h1>Handmade Decorations</h1>
 
-    
           <div className="sculpture-filters">
             <input
               type="text"
-              placeholder="Search sculptures..."
+              placeholder="Search handmade decors..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="sculpture-search-input"
             />
+
             <select
               className="sculpture-filter-select"
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
             >
               <option value="All">All Categories</option>
-              <option value="Sculpture">Sculpture</option>
-              <option value="Marble">Marble</option>
               <option value="Wood">Wood</option>
-              <option value="Steel">Steel</option>
+              <option value="Clay">Clay</option>
+              <option value="Fabric">Fabric</option>
+              <option value="Paper">Paper</option>
             </select>
-            <button className="sculpture-search-btn">Search</button>
           </div>
 
-
           <div className="discovery-grid">
-            {filteredSculptures.length > 0 ? (
-              filteredSculptures.map((art) => (
+            {filteredDecors.length > 0 ? (
+              filteredDecors.map((art) => (
                 <ProductCard
                   key={art.id}
                   item={art}
-                  categoryFolder="Sculpture"
                   onView={handleView}
-                  onAddToCart={() => console.log("Added:", art.name)}
                 />
               ))
             ) : (
-              <p className="no-results">No sculptures found.</p>
+              <p className="no-results">No handmade decorations found.</p>
             )}
           </div>
         </section>
@@ -72,18 +81,18 @@ function HandmadeDecors() {
 
       <Footer />
 
-
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeOverlay}>
-              ×
-            </button>
+            <button className="close-btn" onClick={closeOverlay}>×</button>
+
+
             <img
-              src={require(`../../images/Sculpture/${selectedArt.imageUrl.split("/").pop()}`)}
+              src={getImagePath(selectedArt.imageUrl)}
               alt={selectedArt.name}
               className="overlay-image"
             />
+
             <h2>{selectedArt.name}</h2>
             <p><strong>{selectedArt.artist}</strong></p>
             <p><em>{selectedArt.category}</em></p>
