@@ -57,9 +57,9 @@ export default function OrderPage() {
 
   // Contact
   const handleContactDriver = (driver) =>
-    alert(`📞 Calling ${driver}...`);
+    alert(`Calling ${driver}...`);
   const handleContactVendor = () =>
-    alert("💬 Contacting vendor support...");
+    alert(" Contacting vendor support...");
 
   // Clear All Orders
   const handleClearAll = () => {
@@ -95,7 +95,7 @@ export default function OrderPage() {
         {/* ORDER LIST */}
         {filteredOrders.length === 0 ? (
           <div className="empty-order">
-            No {filter.toLowerCase()} orders found 🕒
+            No {filter.toLowerCase()} orders found 
           </div>
         ) : (
           <div className="orders-list">

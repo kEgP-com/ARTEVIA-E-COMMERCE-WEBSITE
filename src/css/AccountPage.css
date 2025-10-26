@@ -1,4 +1,4 @@
-/* 🌿 Account Page */
+/*  Account Page */
 .account-page {
   min-height: 90vh;
   background: 
@@ -11,7 +11,7 @@
   justify-content: flex-start;
 }
 
-/* 🪶 Heading */
+/*  Heading */
 .account-heading {
   font-size: 2.2rem;
   font-weight: 700;
@@ -21,14 +21,14 @@
   letter-spacing: 0.5px;
 }
 
-/* 🧱 Containers */
+/*  Containers */
 .account-container {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-/* 📦 Account Box */
+/*  Account Box */
 .account-box {
   background-color: rgba(194, 174, 150, 0.15);
   border: 1px solid #c2ae96;
@@ -52,7 +52,7 @@
   color: #4a3521;
 }
 
-/* 🌰 Icons */
+/* Icons */
 .account-icon {
   color: #5b4228;
 }
@@ -69,7 +69,7 @@
   transform: scale(1.15);
 }
 
-/* 🔒 Overlay */
+/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
@@ -113,7 +113,7 @@
   border-color: #a88d70;
 }
 
-/* 💾 Buttons */
+/* Buttons */
 .save-btn {
   background-color: #c2ae96;
   color: #fff;

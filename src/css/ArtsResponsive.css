@@ -1,6 +1,4 @@
-/* ===========================
-   RESPONSIVE ADMIN ARTS PAGE
-   =========================== */
+
 
 /* General adjustments */
 .admin-main {
@@ -23,9 +21,7 @@
   align-items: center;
 }
 
-/* ===============================
-   DESKTOP & TABLET RESPONSIVE
-   =============================== */
+
 @media (max-width: 1024px) {
   /* Hide less important columns */
   .users-table th:nth-child(3),
@@ -51,9 +47,7 @@
   }
 }
 
-/* ===============================
-   TABLET TO MOBILE VIEW (768px)
-   =============================== */
+
 @media (max-width: 768px) {
   /* Header layout */
   .dashboard-header {
@@ -146,9 +140,7 @@
   }
 }
 
-/* ===============================
-   MOBILE VIEW (500px and below)
-   =============================== */
+
 @media (max-width: 500px) {
   /* Table becomes stacked */
   .table-card {
@@ -205,9 +197,7 @@
   }
 }
 
-/* ===============================
-   SHORT SCREENS (height)
-   =============================== */
+
 @media (max-height: 600px) {
   .overlay-content {
     max-height: 80vh;

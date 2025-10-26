@@ -32,13 +32,13 @@ export default function AccountPage() {
   const [tempValue, setTempValue] = useState("");
   const [tempPayment, setTempPayment] = useState(account.payment);
 
-  // ✅ Load saved data from localStorage
+
   useEffect(() => {
     const saved = localStorage.getItem("accountInfo");
     if (saved) setAccount(JSON.parse(saved));
   }, []);
 
-  // ✅ Save to localStorage when account updates
+
   useEffect(() => {
     localStorage.setItem("accountInfo", JSON.stringify(account));
   }, [account]);

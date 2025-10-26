@@ -1,4 +1,4 @@
-/* 🌿 Page Base */
+
 .order-history-container {
   padding: 50px;
   background: url("../images/images/login_bg.png") no-repeat center center/cover;
@@ -7,7 +7,7 @@
   color: #4b3b2b;
 }
 
-/* 🧭 Header + Filter */
+
 .order-history-header {
   display: flex;
   justify-content: space-between;
@@ -49,14 +49,14 @@
   background: #f0e4d7;
 }
 
-/* 🧾 Order List */
+
 .orders-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* 📦 Order Card */
+
 .order-card {
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@
   transform: translateY(-5px);
 }
 
-/* Image */
+
 .order-img img {
   width: 120px;
   height: 120px;
@@ -82,7 +82,7 @@
   object-fit: cover;
 }
 
-/* Info */
+
 .order-info {
   flex: 1;
   margin-left: 20px;
@@ -107,7 +107,7 @@
   background: #e53935;
 }
 
-/* 🧭 Action Buttons */
+/*  Action Buttons */
 .order-actions {
   display: flex;
   flex-direction: column;
@@ -168,7 +168,7 @@
   background: #fdd835;
 }
 
-/* 🧹 Clear History */
+/* Clear History */
 .clear-history-container {
   display: flex;
   justify-content: center;
@@ -275,9 +275,9 @@
 .confirm-btn:hover {
   background: #7a4f29;
 }
-/* 🌿 Responsive Layouts */
+/* Responsive Layouts */
 
-/* 🧩 Medium screens (tablets) */
+/* Medium screens (tablets) */
 @media (max-width: 992px) {
   .order-history-container {
     padding: 30px;
@@ -326,7 +326,7 @@
   }
 }
 
-/* 📱 Small screens (mobile) */
+/* Small screens (mobile) */
 @media (max-width: 600px) {
   .order-history-container {
     padding: 20px;
@@ -381,7 +381,7 @@
   }
 }
 
-/* 🪶 Extra Small Screens (Under 400px) */
+/* Extra Small Screens (Under 400px) */
 @media (max-width: 400px) {
   .order-img img {
     width: 150px;

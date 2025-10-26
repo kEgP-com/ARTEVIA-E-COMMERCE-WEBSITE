@@ -6,7 +6,7 @@ import "../../css/Homepage.css";
 import WaveBg from "../../images/images/wavebg.png";
 import SaleBadge from "../../images/images/Sale.png";
 
-// ✅ Import a few main images manually for the top sections
+// Import a few main images manually for the top sections
 import DigitalArt1 from "../../images/Digital Art/Searching for peace.png";
 import Painting1 from "../../images/Painting/Pag Akbay Series VII by Leti watersong.jpg";
 import Sculpture1 from "../../images/Sculpture/blossom-v-wood-sculpture-by-wouter-van-der-vlugt-1-300x200.png";
@@ -17,7 +17,7 @@ import Painting2 from "../../images/Painting/Oil_On_Canvas_By_Shan_Arts.jpg";
 import Sculpture2 from "../../images/Sculpture/la-grande-ourse-animal-sculpture-by-eric-valat_7-550x769.png";
 import Sketch2 from "../../images/Sketch arts/Custom_Portrait_2.png";
 
-// ✅ Import JSON data
+
 import digitalArts from "../../data/DigitalArts.json";
 import handmadeDecors from "../../data/HandmadeDecors.json";
 import paintings from "../../data/Painting.json";
@@ -47,22 +47,21 @@ function Homepage() {
 
   const slideAmount = (activePage - 1) * 280;
 
-  // 🔍 Helper — find the artwork details by name
+  //  Helper — find the artwork details by name
   const getArtDetails = (name) => {
     const allArtData = [...digitalArts, ...handmadeDecors, ...paintings, ...sculptures, ...sketches];
     return allArtData.find((art) => art.name.toLowerCase().includes(name.toLowerCase()));
   };
 
-  // 🖼️ Handle view overlay open
+
   const handleView = (name) => {
     const artData = getArtDetails(name);
     if (artData) setSelectedArt(artData);
   };
 
-  // ❌ Close overlay
   const closeOverlay = () => setSelectedArt(null);
 
-  // ✅ Safe image loader for JSON-based art
+
   const getImagePath = (relativePath) => {
     try {
       // remove leading ../../images/ if present

@@ -15,7 +15,7 @@
     "category": "Handmade Decor",
     "price": 2890.00,
     "description": "Oak Wood Decorative Bird",
-    "imageUrl": "../images/Handmade Decor/dovy_oak.png"
+    "imageUrl": "../../images/Handmade Decor/dovy_oak.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "Handmade Decor",
     "price": 190.00,
     "description": "Candle Stand Large",
-    "imageUrl": "../../images/Handmade Decor/fleur d.png"
+    "imageUrl": "../../images/Handmade Decor/fleur d.jpg"
   },
   {
     "id": 4,

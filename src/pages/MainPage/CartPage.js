@@ -31,7 +31,7 @@ export default function CartPage() {
 
   const navigate = useNavigate();
 
-  // ✅ Load data on mount
+
   useEffect(() => {
     const saved = localStorage.getItem("accountInfo");
     if (saved) {
@@ -44,12 +44,12 @@ export default function CartPage() {
       });
     }
 
-    // ✅ Load cart from localStorage
+
     const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartItems(storedCart);
   }, []);
 
-  // ✅ Delete item & update localStorage
+
   const handleDelete = (id) => {
     setCartItems((prev) => {
       const updated = prev.filter((item) => item.id !== id);
@@ -58,7 +58,7 @@ export default function CartPage() {
     });
   };
 
-  // ✅ Update quantity
+
   const updateQuantity = (id, change) => {
     setCartItems((prev) => {
       const updated = prev.map((item) =>
@@ -89,7 +89,7 @@ export default function CartPage() {
 
   const handleProceed = () => setShowOverlay(true);
 
-  // ✅ Finalize order & save to localStorage
+
   const handleOverlayProceed = () => {
     const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
 

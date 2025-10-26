@@ -1,6 +1,4 @@
-/* =============================== */
-/* 🧼 GLOBAL + LOGIN PAGE STYLES   */
-/* =============================== */
+
 
 html, body {
   margin: 0;
@@ -11,7 +9,6 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* 🌊 MAIN BACKGROUND */
 .view {
   display: flex;
   justify-content: center;
@@ -28,7 +25,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* 🪄 LOGIN CARD */
+
 .column {
   width: 458px;
   display: flex;
@@ -42,7 +39,7 @@ html, body {
   text-align: center;
 }
 
-/* 🖼️ LOGO */
+
 .logo-image {
   max-width: 380px;
   height: auto;
@@ -51,7 +48,7 @@ html, body {
   margin: 0 auto 30px auto;
 }
 
-/* ✍️ INPUT FIELDS */
+
 .input,
 .input2 {
   color: #828282;
@@ -66,7 +63,7 @@ html, body {
   display: block;
 }
 
-/* 🔘 BUTTON */
+
 .button {
   width: 400px;
   display: flex;
@@ -92,7 +89,7 @@ html, body {
   color: #000000 !important;
 }
 
-/* 📝 TEXT STYLES */
+
 .text2 {
   color: #020202 !important;
   font-size: 16px;
@@ -131,7 +128,7 @@ html, body {
   transform: scale(1.05);
 }
 
-/* 🧡 SIGN UP LINK */
+
 .signup-link {
   color: #000000 !important;
   cursor: pointer;
@@ -147,7 +144,7 @@ html, body {
   text-decoration: underline;
 }
 
-/* 🖱️ CLICKABLE TEXT */
+
 .clickable-text {
   cursor: pointer;
   text-decoration: underline;
@@ -162,9 +159,7 @@ html, body {
   transform: scale(1.05);
 }
 
-/* =============================== */
-/* ✨ CODE VERIFICATION PAGE STYLES */
-/* =============================== */
+
 
 .code-verification-title {
   color: #000000;
@@ -201,9 +196,6 @@ html, body {
   margin-bottom: 10px;
 }
 
-/* =============================== */
-/* 📱 RESPONSIVE DESIGN */
-/* =============================== */
 
 @media (max-width: 1024px) {
   .column {
@@ -278,19 +270,17 @@ html, body {
     font-size: 18px;
   }
 }
-/* =============================== */
-/* INPUT WITH EYE ICON INSIDE  */
-/* =============================== */
+
 
 .password-container {
   position: relative;
-  width: 400px; /* match input width */
+  width: 400px; 
   margin-top: 10px;
 }
 
 .password-input {
   width: 100%;
-  padding-right: 45px; /* leave room for icon */
+  padding-right: 45px; 
   box-sizing: border-box;
 }
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Compo.css";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 import ProfileIcon from "../images/images/profile.png";
 import CartIcon from "../images/images/cart.png";
@@ -28,16 +27,32 @@ function Navbar() {
       }
       setLastScrollY(currentScrollY <= 0 ? 0 : currentScrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
+
+  // Scroll to footer
+  const scrollToFooter = () => {
+    const footer = document.getElementById("footer-section");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth" });
+    }
+    setShowLeftMenu(false);
+    setShowRightMenu(false);
+  };
+
+  // Navigate to product or page
+  const goToPage = (path) => {
+    navigate(path);
+    setShowLeftMenu(false);
+    setShowRightMenu(false);
+  };
 
   return (
     <>
       <header className={`navbar-container ${isVisible ? "visible" : "hidden"}`}>
         <nav className="navbar">
-          {/* LEFT MENU BUTTON (Mobile Only) */}
+
           <button
             className="menu-btn left-menu-btn"
             onClick={() => setShowLeftMenu(!showLeftMenu)}
@@ -45,7 +60,7 @@ function Navbar() {
             {showLeftMenu ? <FaTimes /> : <FaBars />}
           </button>
 
-          {/* LOGO LEFT */}
+
           <div
             className="nav-left"
             onClick={() => navigate("/customer/homepage")}
@@ -54,12 +69,12 @@ function Navbar() {
             <img src={Logo} alt="Logo" className="logo-img" />
           </div>
 
-          {/* SEARCH BAR CENTER */}
+
           <div className="nav-center">
             <input type="text" className="search-bar" placeholder="Search..." />
           </div>
 
-          {/* ICONS RIGHT */}
+
           <div className="nav-right">
             <img
               src={ProfileIcon}
@@ -81,7 +96,7 @@ function Navbar() {
             />
           </div>
 
-          {/* RIGHT MENU BUTTON (Mobile Only) */}
+
           <button
             className="menu-btn right-menu-btn"
             onClick={() => setShowRightMenu(!showRightMenu)}
@@ -90,47 +105,49 @@ function Navbar() {
           </button>
         </nav>
 
-        {/* BOTTOM NAV LINKS (Desktop Only) */}
+ 
         <div className="nav-links-bar">
           <ul className="nav-links">
             <li onClick={() => navigate("/customer/homepage")}>HOME</li>
-            <li onClick={() => setShowHelpOverlay(true)}>ABOUT</li>
+            <li onClick={scrollToFooter}>ABOUT</li>
+            <li onClick={() => goToPage("/customer/art")}>ART</li> {/* ✅ Added this */}
             <li onClick={() => navigate("/customer/order")}>ORDERS</li>
             <li className="nav-link-dropdown">
               CATEGORIES
               <div className="dropdown-content">
-                <a href="#">Sketch Art</a>
-                <a href="#">Digital Art</a>
-                <a href="#">Sculpture</a>
-                <a href="#">Painting</a>
-                <a href="#">Handmade Decor</a>
+                <span onClick={() => goToPage("/customer/sketch")}>Sketch Art</span>
+                <span onClick={() => goToPage("/customer/digital-arts")}>Digital Art</span>
+                <span onClick={() => goToPage("/customer/sculpture")}>Sculpture</span>
+                <span onClick={() => goToPage("/customer/painting")}>Painting</span>
+                <span onClick={() => goToPage("/customer/handmade-decors")}>Handmade Decor</span>
               </div>
             </li>
           </ul>
         </div>
 
-        {/* LEFT DROPDOWN (Mobile) */}
+
         {showLeftMenu && (
           <div className="mobile-dropdown left-dropdown">
             <ul>
               <li onClick={() => navigate("/customer/homepage")}>HOME</li>
-              <li onClick={() => setShowHelpOverlay(true)}>ABOUT</li>
+              <li onClick={scrollToFooter}>ABOUT</li>
+              <li onClick={() => goToPage("/customer/artpage")}>ART</li> 
               <li onClick={() => navigate("/customer/order")}>ORDERS</li>
               <li className="nav-link-dropdown">
                 CATEGORIES
                 <div className="dropdown-content">
-                  <a href="#">Sketch Art</a>
-                  <a href="#">Digital Art</a>
-                  <a href="#">Sculpture</a>
-                  <a href="#">Painting</a>
-                  <a href="#">Handmade Decor</a>
+                  <span onClick={() => goToPage("/customer/sketch")}>Sketch Art</span>
+                  <span onClick={() => goToPage("/customer/digital-arts")}>Digital Art</span>
+                  <span onClick={() => goToPage("/customer/sculpture")}>Sculpture</span>
+                  <span onClick={() => goToPage("/customer/painting")}>Painting</span>
+                  <span onClick={() => goToPage("/customer/handmade-decors")}>Handmade Decor</span>
                 </div>
               </li>
             </ul>
           </div>
         )}
 
-        {/* RIGHT DROPDOWN (Mobile) */}
+
         {showRightMenu && (
           <div className="mobile-dropdown right-dropdown">
             <div className="mobile-search-alt">
@@ -160,7 +177,7 @@ function Navbar() {
         )}
       </header>
 
-      {/* 🆘 Help Overlay */}
+
       {showHelpOverlay && (
         <div className="overlay">
           <div className="overlay-content">
