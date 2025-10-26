@@ -1,0 +1,176 @@
+/* src/css/ProductDetails.css */
+
+/* --- CORE OVERLAY STYLES (REQUIRED FOR MODAL POP-UP) --- */
+
+.modal-overlay {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of everything */
+  overflow-y: auto; /* Allows scrolling if the content is too tall */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #f7f3ed; /* Light beige/cream background for the modal box */
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #333333;
+  line-height: 1;
+  padding: 0;
+}
+
+/* --- PRODUCT DETAILS LAYOUT --- */
+
+.product-details-content {
+  display: flex;
+  gap: 50px;
+  text-align: left;
+  /* Removed background/border since they are on the .modal-content */
+}
+
+.product-image-large {
+  flex: 1;
+  min-width: 400px;
+  aspect-ratio: 1 / 1.3;
+  background-color: #e0e0e0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #9d816a; /* Frame border */
+  overflow: hidden;
+}
+
+/* --- PRODUCT INFO TEXT STYLES --- */
+
+.product-info {
+  flex: 1.5;
+  padding-top: 10px;
+}
+
+.product-info h1 {
+  font-size: 3em;
+  color: #333333;
+  margin-bottom: 5px;
+  font-family: 'Cinzel', serif;
+}
+
+.product-artist {
+  font-size: 1.5em;
+  color: #8d6e63; /* Medium brown color */
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.product-category {
+  font-size: 1.2em;
+  color: #5d4037;
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #5d4037;
+  margin-bottom: 25px;
+}
+
+.product-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* --- PRIMARY ACTION BUTTON (Add to Cart) --- */
+
+.add-to-cart-button {
+  padding: 15px 40px;
+  background-color: #333333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-family: 'Cinzel', serif;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #5d4037;
+}
+
+/* --- BOTTOM ACTION BAR STYLES --- */
+
+.modal-bottom-actions {
+  display: flex;
+  justify-content: space-between; /* Pushes buttons to left, center, right */
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd; 
+}
+
+.action-button {
+  padding: 12px 25px;
+  border: 1px solid #8d6e63;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* 1. Message Seller Button (Bottom-Left) */
+.message-seller-button {
+  background-color: #f7f3ed; /* Light background */
+  color: #5d4037; /* Dark text/border */
+}
+
+.message-seller-button:hover {
+  background-color: #5d4037;
+  color: white;
+}
+
+/* 2. Feedback Button (Center) */
+.feedback-button {
+  background-color: #333333; /* Dark background */
+  color: white;
+  border-color: #333333;
+}
+
+.feedback-button:hover {
+  background-color: #5d4037;
+}
+
+/* 3. Close Button (Bottom-Right) */
+.close-modal-button {
+  background-color: #d9534f; /* Red color for closing */
+  color: white;
+  border: none;
+}
+
+.close-modal-button:hover {
+  background-color: #c9302c;
+}

@@ -24,7 +24,7 @@
     "category": "Handmade Decor",
     "price": 190.00,
     "description": "Candle Stand Large",
-    "imageUrl": "../images/Handmade Decor/fleur d.png"
+    "imageUrl": "../images/Handmade Decor/fleurd.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "category": "Handmade Decor",
     "price": 590.00,
     "description": "Digital on Paper 30.0 inch x 24.0 inch",
-    "imageUrl": "../images/Handmade Decor/lupa terracota.png"
+    "imageUrl": "../images/Handmade Decor/lupaterracota.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "category": "Handmade Decor",
     "price": 1290.00,
     "description": "Sorghum Stem Bundle",
-    "imageUrl": "../images/Handmade Decor/malar pampas.png"
+    "imageUrl": "../images/Handmade Decor/malarpampas.png"
   },
   {
     "id": 6,

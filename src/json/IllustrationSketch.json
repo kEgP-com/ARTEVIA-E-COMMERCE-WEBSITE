@@ -1,56 +1,56 @@
 [
   {
     "id": 1,
-    "name": "Anarva",
-    "artist": "Unknown",
-    "category": "Handmade Decor",
-    "price": 2750.00,
-    "description": "Ecomix Elephant ith Fabric & Wood - Small",
-    "imageUrl": "../images/Handmade Decor/Anarva.png"
+    "name": "Cat",
+    "artist": "by Hansana",
+    "category": "Illustration & Sketch",
+    "price": 2826.00,
+    "description": "Charcoal Custom Portrait of Cat",
+    "imageUrl": "../images/Sketch arts/catportrait.png"
   },
   {
     "id": 2,
-    "name": "Dovy",
-    "artist": "by Woodlands",
-    "category": "Handmade Decor",
-    "price": 2890.00,
-    "description": "Oak Wood Decorative Bird",
-    "imageUrl": "../images/Handmade Decor/dovy.png"
+    "name": "Graphite Pencil Portrait",
+    "artist": "by AStDaya",
+    "category": "Illustration & Sketch",
+    "price": 3853.00,
+    "description": "Custom hand drawn portrait using graphite pencil unique gift idea for mom, dad, children and other",
+    "imageUrl": "../images/Sketch arts/customportrait.png"
   },
   {
     "id": 3,
-    "name": "Fleur D",
-    "artist": "by Ceramic Sit",
-    "category": "Handmade Decor",
+    "name": "Portrait",
+    "artist": "ART2YOUcreation",
+    "category": "Illustration & Sketch",
     "price": 190.00,
-    "description": "Candle Stand Large",
-    "imageUrl": "../images/Handmade Decor/fleur d.png"
+    "description": "Custom hand drawn portrait using pencil",
+    "imageUrl": "../images/Sketch arts/CustomPortrait2.png"
   },
   {
     "id": 4,
-    "name": "Lupa Terracota",
-    "artist": "by Sartigas",
-    "category": "Handmade Decor",
-    "price": 590.00,
-    "description": "Digital on Paper 30.0 inch x 24.0 inch",
-    "imageUrl": "../images/Handmade Decor/lupa terracota.png"
+    "name": "Father & Son",
+    "artist": "by MichaelJArts",
+    "category": "Illustration & Sketch",
+    "price": 2826.00,
+    "description": "Sketch of father and son using pencil",
+    "imageUrl": "../images/Sketch arts/customportrait3.png"
   },
   {
     "id": 5,
-    "name": "Malar Pampas",
-    "artist": "by Sardigas",
-    "category": "Handmade Decor",
-    "price": 1290.00,
-    "description": "Sorghum Stem Bundle",
-    "imageUrl": "../images/Handmade Decor/malar pampas.png"
+    "name": "Mr. Dog",
+    "artist": "by yourstruly",
+    "category": "Illustration & Sketch",
+    "price": 6375.00,
+    "description": "Custom pet portraits dressed in suits",
+    "imageUrl": "../images/Sketch arts/dogportrait.png"
   },
   {
     "id": 6,
-    "name": "Ort Planter",
-    "artist": "by Paganini Arts",
-    "category": "Handmade Decor",
-    "price": 2050.00,
-    "description": "Ort Ceramic Planter",
-    "imageUrl": "../images/Handmade Decor/ort.jpg"
+    "name": "SelfPortrait",
+    "artist": "by MichaelJArts",
+    "category": "Illustration & Sketch",
+    "price": 2826.00,
+    "description": "Custom hand drawn portrait using pencil",
+    "imageUrl": "../images/Sketch arts/selfportrait.png"
   }
 ]
