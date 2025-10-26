@@ -110,7 +110,7 @@ function Navbar() {
           <ul className="nav-links">
             <li onClick={() => navigate("/customer/homepage")}>HOME</li>
             <li onClick={scrollToFooter}>ABOUT</li>
-            <li onClick={() => goToPage("/customer/art")}>ART</li> {/* ✅ Added this */}
+            <li onClick={() => goToPage("/customer/artpage")}>ART</li> 
             <li onClick={() => navigate("/customer/order")}>ORDERS</li>
             <li className="nav-link-dropdown">
               CATEGORIES
