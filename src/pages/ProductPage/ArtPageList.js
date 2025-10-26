@@ -5,6 +5,9 @@ import "../../css/Category.css";
 import productList from "../../data/productList.json";
 import ProductCard from "../../components/ProductCard";
 
+
+const images = require.context("../../images", true);
+
 function ArtPageList() {
   const [selectedArt, setSelectedArt] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -13,6 +16,18 @@ function ArtPageList() {
 
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
+
+
+  const getImagePath = (path) => {
+    try {
+      const cleanPath = path.replace(/^(\.\.\/)+images\//, "");
+      return images(`./${cleanPath}`);
+    } catch (err) {
+      console.warn("Image not found:", path);
+      return "";
+    }
+  };
+
 
   let filteredArts = productList.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
@@ -76,11 +91,7 @@ function ArtPageList() {
           <div className="discovery-grid">
             {filteredArts.length > 0 ? (
               filteredArts.map((art) => (
-                <ProductCard
-                  key={art.id}
-                  item={art}
-                  onView={handleView}
-                />
+                <ProductCard key={art.id} item={art} onView={handleView} />
               ))
             ) : (
               <p className="no-results">No artworks found.</p>
@@ -94,14 +105,14 @@ function ArtPageList() {
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeOverlay}>
-              ×
-            </button>
+            <button className="close-btn" onClick={closeOverlay}>×</button>
+
             <img
-              src={require(`../../images/${selectedArt.imageUrl.split("/").pop()}`)}
+              src={getImagePath(selectedArt.imageUrl)}
               alt={selectedArt.name}
               className="overlay-image"
             />
+
             <h2>{selectedArt.name}</h2>
             <p><strong>{selectedArt.artist}</strong></p>
             <p><em>{selectedArt.category}</em></p>
