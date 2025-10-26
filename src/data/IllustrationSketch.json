@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Cat",
+    "artist": "by Hansana",
+    "category": "Illustration & Sketch",
+    "price": 2826.00,
+    "description": "Charcoal Custom Portrait of Cat",
+    "imageUrl": "../images/Sketch arts/cat portrait.png"
+  },
+  {
+    "id": 2,
+    "name": "Graphite Pencil Portrait",
+    "artist": "by AStDaya",
+    "category": "Illustration & Sketch",
+    "price": 3853.00,
+    "description": "Custom hand drawn portrait using graphite pencil unique gift idea for mom, dad, children and other",
+    "imageUrl": "../images/Sketch arts/custom portrait.png"
+  },
+  {
+    "id": 3,
+    "name": "Portrait",
+    "artist": "ART2YOUcreation",
+    "category": "Illustration & Sketch",
+    "price": 190.00,
+    "description": "Custom hand drawn portrait using pencil",
+    "imageUrl": "../images/Sketch arts/Custom_Portrait_2.png"
+  },
+  {
+    "id": 4,
+    "name": "Father & Son",
+    "artist": "by MichaelJArts",
+    "category": "Illustration & Sketch",
+    "price": 2826.00,
+    "description": "Sketch of father and son using pencil",
+    "imageUrl": "../images/Sketch arts/custom portrait -3.png"
+  },
+  {
+    "id": 5,
+    "name": "Mr. Dog",
+    "artist": "by yourstruly",
+    "category": "Illustration & Sketch",
+    "price": 6375.00,
+    "description": "Custom pet portraits dressed in suits",
+    "imageUrl": "../images/Sketch arts/dog portrait.png"
+  },
+  {
+    "id": 6,
+    "name": "SelfPortrait",
+    "artist": "by MichaelJArts",
+    "category": "Illustration & Sketch",
+    "price": 2826.00,
+    "description": "Custom hand drawn portrait using pencil",
+    "imageUrl": "../images/Sketch arts/self portrait.png"
+  }
+]
