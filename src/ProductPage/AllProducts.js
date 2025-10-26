@@ -7,7 +7,7 @@ import ATasteOfHoney from '../images/Digital Art/ATasteOfHoney.png';
 import ComingHome from '../images/Digital Art/ComingHome.png';
 import FeelTheHeat from '../images/Digital Art/FeelTheHeat.png';
 import FloralMajesty from '../images/Digital Art/FloralMajesty.png';
-import Goddess54 from '../images/Digital Art/Goddess54.png';
+import Goddess from '../images/Digital Art/Goddess.png';
 import SearchingForPeace from '../images/Digital Art/SearchingForPeace.png';
 
 // Handmade Decor Images
@@ -63,7 +63,7 @@ const IMAGE_MAP = {
     "Coming home": ComingHome,
     "Feel The Heat - Diptych": FeelTheHeat,
     "Floral Majesty 1": FloralMajesty,
-    "Goddess 54 ": Goddess54,
+    "Goddess 54 ": Goddess,
     "Searching for peace": SearchingForPeace,
     
     // Handmade Decor
