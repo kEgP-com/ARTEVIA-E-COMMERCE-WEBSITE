@@ -6,7 +6,7 @@ function Products({ onCategorySelect, onProductSelect }) {
     { 
       name: 'PAINTINGS', 
       count: 4,
-      image: '../images/Painting/Oil_On_Canvas_By_Shan_Arts.jpg'
+      image: '/images/Painting/Oil_On_Canvas_By_Shan_Arts.jpg'
     },
     { 
       name: 'SCULPTURE', 
@@ -16,17 +16,17 @@ function Products({ onCategorySelect, onProductSelect }) {
     { 
       name: 'DIGITAL ART', 
       count: 6,
-      image: '../images/Digital Art/A_Taste_of_Honey.png'
+      image: '/images/Digital Art/A_Taste_of_Honey.png'
     },
     { 
       name: 'SKETCH ART', 
       count: 6,
-      image: '/images/Sketcharts/Custom_Portrait_2.png'
+      image: '/images/Sketch arts/Custom_Portrait_2.png'
     },
     { 
       name: 'HOMEMADE DECOR', 
       count: 6,
-      image: '/images/HandmadeDecor/dovy_oak_wood_decorative_bird_by_Woodlands_P 2.890.00.png'
+      image: '/images/Handmade Decor/dovy_oak_wood_decorative_bird_by_Woodlands_P 2.890.00.png'
     }
   ];
 
@@ -39,7 +39,7 @@ function Products({ onCategorySelect, onProductSelect }) {
   return (
     <div className="products-container">
       <div className="products-header">
-        <h1>CATEGORIES</h1>
+        <h1>PRODUCTS/<br/>CATEGORIES</h1>
         <div className="search-section">
           <div className="search-bar-container-extra-wide">
             <div className="search-icon">🔍</div>
