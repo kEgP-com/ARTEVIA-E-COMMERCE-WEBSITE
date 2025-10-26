@@ -1,0 +1,113 @@
+.account-page {
+  min-height: 90vh;
+  background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+              url("../images/images/login_bg.png") center/cover fixed;
+  padding: 40px 10%;
+  color: #3a2c1a;
+}
+
+.account-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 30px;
+  color: #5b4228;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.account-box {
+  background-color: rgba(194, 174, 150, 0.2);
+  border: 1px solid #c2ae96;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.account-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.account-icon {
+  color: #5b4228;
+}
+
+.edit-icon {
+  margin-left: 10px;
+  color: #7a5e3a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-icon:hover {
+  color: #3a2c1a;
+  transform: scale(1.1);
+}
+
+/* 🔒 Overlay Design */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.overlay-content {
+  background: #fff8f0;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+}
+
+.overlay-content h2 {
+  color: #5b4228;
+  margin-bottom: 10px;
+}
+
+.overlay-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c2ae96;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+
+.save-btn {
+  background-color: #c2ae96;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.save-btn:hover {
+  background-color: #a88d70;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #3a2c1a;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
