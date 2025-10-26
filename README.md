@@ -1,3 +1,12 @@
+# Design wireframes/mockups for all main
+pages.- Decide color scheme, typography,
+and layout.- Prepare responsive layout
+guidelines.- Document design rationale.
+
+Figma Link: https://www.figma.com/design/7ALJxoy9zgzrsRtF1T8ltK/E-COMMERCE-WIREFRAME--Community-?node-id=0-1&p=f&t=ao710xujxKzATKDa-0
+
+
+
 # 🐳 Docker React Development Environment
 
 A complete Docker-based development and production environment for React applications with hot reload, optimized builds, and production-ready deployment.
