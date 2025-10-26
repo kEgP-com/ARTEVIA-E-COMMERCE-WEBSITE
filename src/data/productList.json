@@ -6,7 +6,7 @@
     "category": "Handmade Decor",
     "price": 2750.00,
     "description": "Ecomix Elephant with Fabric & Wood - Small",
-    "imageUrl": "../images/Handmade Decor/Anarva.png"
+    "imageUrl": "../../images/Handmade Decor/Anarva.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "category": "Handmade Decor",
     "price": 2890.00,
     "description": "Oak Wood Decorative Bird",
-    "imageUrl": "../images/Handmade Decor/dovy_oak.png"
+    "imageUrl": "../../images/Handmade Decor/dovy_oak.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "Handmade Decor",
     "price": 190.00,
     "description": "Candle Stand Large",
-    "imageUrl": "../images/Handmade Decor/fleur d.jpg"
+    "imageUrl": "../../images/Handmade Decor/fleur d.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "category": "Handmade Decor",
     "price": 590.00,
     "description": "Digital on Paper 30.0 inch x 24.0 inch",
-    "imageUrl": "../images/Handmade Decor/lupa terracota.png"
+    "imageUrl": "../../images/Handmade Decor/lupa terracota.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "category": "Handmade Decor",
     "price": 1290.00,
     "description": "Sorghum Stem Bundle",
-    "imageUrl": "../images/Handmade Decor/malar pampas.png"
+    "imageUrl": "../../images/Handmade Decor/malar pampas.png"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "category": "Handmade Decor",
     "price": 2050.00,
     "description": "Ort Ceramic Planter",
-    "imageUrl": "../images/Handmade Decor/ort.jpg"
+    "imageUrl": "../../images/Handmade Decor/ort.jpg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "category": "Illustration & Sketch",
     "price": 2826.00,
     "description": "Charcoal Custom Portrait of Cat",
-    "imageUrl": "../images/Sketch arts/cat portrait.png"
+    "imageUrl": "../../images/Sketch arts/cat portrait.png"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "category": "Illustration & Sketch",
     "price": 3853.00,
     "description": "Custom hand drawn portrait using graphite pencil unique gift idea for mom, dad, children and others",
-    "imageUrl": "../images/Sketch arts/custom portrait.png"
+    "imageUrl": "../../images/Sketch arts/custom portrait.png"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "category": "Illustration & Sketch",
     "price": 190.00,
     "description": "Custom hand drawn portrait using pencil",
-    "imageUrl": "../images/Sketch arts/Custom_Portrait_2.png"
+    "imageUrl": "../../images/Sketch arts/Custom_Portrait_2.png"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "category": "Illustration & Sketch",
     "price": 2826.00,
     "description": "Sketch of father and son using pencil",
-    "imageUrl": "../images/Sketch arts/custom portrait -3.png"
+    "imageUrl": "../../images/Sketch arts/custom portrait -3.png"
   },
   {
     "id": 11,
@@ -105,7 +105,7 @@
     "category": "Illustration & Sketch",
     "price": 2826.00,
     "description": "Custom hand drawn portrait using pencil",
-    "imageUrl": "../images/Sketch arts/self portrait.png"
+    "imageUrl": "../../images/Sketch arts/self portrait.png"
   },
   {
     "id": 13,
@@ -114,7 +114,7 @@
     "category": "Painting",
     "price": 3850.00,
     "description": "A vibrant abstract painting showcasing expressive strokes and layered textures.",
-    "imageUrl": "../images/Painting/Abstract Paint by Luinette Belen.jpg"
+    "imageUrl": "../../images/Painting/Abstract Paint by Luinette Belen.jpg"
   },
   {
     "id": 14,
@@ -123,7 +123,7 @@
     "category": "Painting",
     "price": 4200.00,
     "description": "Oil on canvas featuring serene tones and subtle detailing of landscapes.",
-    "imageUrl": "../images/Painting/Oil Canvas by denCepada.jpg"
+    "imageUrl": "../../images/Painting/Oil Canvas by denCepada.jpg"
   },
   {
     "id": 15,
@@ -132,7 +132,7 @@
     "category": "Painting",
     "price": 3990.00,
     "description": "A richly detailed oil painting with expressive brushwork and depth.",
-    "imageUrl": "../images/Painting/Oil_On_Canvas_By_Shan_Arts.jpg"
+    "imageUrl": "../../images/Painting/Oil_On_Canvas_By_Shan_Arts.jpg"
   },
   {
     "id": 16,
@@ -141,7 +141,7 @@
     "category": "Painting",
     "price": 4750.00,
     "description": "Part of the Pag Akbay series—an evocative depiction of human connection and emotion.",
-    "imageUrl": "../images/Painting/Pag Akbay Series VII by Leti watersong.jpg"
+    "imageUrl": "../../images/Painting/Pag Akbay Series VII by Leti watersong.jpg"
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "category": "Sculpture",
     "price": 6800.00,
     "description": "A contemporary wooden sculpture with fluid organic form and modern aesthetic.",
-    "imageUrl": "../images/Sculpture/blossom-v-wood-sculpture-by-wouter-van-der-vlugt-1-300x200.png"
+    "imageUrl": "../../images/Sculpture/blossom-v-wood-sculpture-by-wouter-van-der-vlugt-1-300x200.png"
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "category": "Sculpture",
     "price": 7500.00,
     "description": "Elegant marble sculpture representing unity and the emotional bond between two beings.",
-    "imageUrl": "../images/Sculpture/first-connection-marble-sculpture-by-francesca-bernardini_1.png"
+    "imageUrl": "../../images/Sculpture/first-connection-marble-sculpture-by-francesca-bernardini_1.png"
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
     "category": "Sculpture",
     "price": 8200.00,
     "description": "A finely crafted animal sculpture reflecting strength and gentleness in marble finish.",
-    "imageUrl": "../images/Sculpture/la-grande-ourse-animal-sculpture-by-eric-valat_7-550x769.png"
+    "imageUrl": "../../images/Sculpture/la-grande-ourse-animal-sculpture-by-eric-valat_7-550x769.png"
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
     "category": "Sculpture",
     "price": 9100.00,
     "description": "A stainless steel masterpiece embodying harmony through smooth reflective surfaces.",
-    "imageUrl": "../images/Sculpture/peace-and-love-ii-stainless-steel-sculpture-by-franck-k-1-550x536.png"
+    "imageUrl": "../../images/Sculpture/peace-and-love-ii-stainless-steel-sculpture-by-franck-k-1-550x536.png"
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "category": "Sculpture",
     "price": 6400.00,
     "description": "Graceful marble sculpture inspired by the beauty and delicacy of nature’s forms.",
-    "imageUrl": "../images/Sculpture/rosa-by-marie-louise-sorbac-300x450.png"
+    "imageUrl": "../../images/Sculpture/rosa-by-marie-louise-sorbac-300x450.png"
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
     "category": "Sculpture",
     "price": 7800.00,
     "description": "Intricately carved marble sculpture balancing geometric precision and organic flow.",
-    "imageUrl": "../images/Sculpture/stonegate-8-marble-sculpture-by-mattia-bosco-2-300x450.png"
+    "imageUrl": "../../images/Sculpture/stonegate-8-marble-sculpture-by-mattia-bosco-2-300x450.png"
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "category": "Digital Art",
     "price": 7700.00,
     "description": "Digital on paper 27.5 inch x 27.5 inch",
-    "imageUrl": "../images/Digital Art/A_Taste_of_Honey.png"
+    "imageUrl": "../../images/Digital Art/A_Taste_of_Honey.png"
   },
   {
     "id": 24,
@@ -213,7 +213,7 @@
     "category": "Digital Art",
     "price": 430.00,
     "description": "Digital on Paper",
-    "imageUrl": "../images/Digital Art/Coming home.png"
+    "imageUrl": "../../images/Digital Art/Coming home.png"
   },
   {
     "id": 25,
@@ -222,7 +222,7 @@
     "category": "Digital Art",
     "price": 1268.00,
     "description": "Digital",
-    "imageUrl": "../images/Digital Art/Feel The Heat.png"
+    "imageUrl": "../../images/Digital Art/Feel The Heat.png"
   },
   {
     "id": 26,
@@ -231,7 +231,7 @@
     "category": "Digital Art",
     "price": 495.00,
     "description": "Digital on Paper 30.0 inch x 24.0 inch",
-    "imageUrl": "../images/Digital Art/Floral Majesty.png"
+    "imageUrl": "../../images/Digital Art/Floral Majesty.png"
   },
   {
     "id": 27,
@@ -240,7 +240,7 @@
     "category": "Digital Art",
     "price": 5290.00,
     "description": "Digital on metal 52.0 inch x 32.0 inch",
-    "imageUrl": "../images/Digital Art/goddess 54.png"
+    "imageUrl": "../../images/Digital Art/goddess 54.png"
   },
   {
     "id": 28,
@@ -249,6 +249,6 @@
     "category": "Digital Art",
     "price": 1750.00,
     "description": "Digital on paper 43.3 inch x 35.4 inch",
-    "imageUrl": "../images/Digital Art/Searching for peace.png"
+    "imageUrl": "../../images/Digital Art/Searching for peace.png"
   }
 ]
