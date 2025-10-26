@@ -770,6 +770,7 @@
     padding: 10px;
     font-size: 0.9em;
   }
+<<<<<<< HEAD:src/css/Homepage.css
 }
 /* ======================== */
 /* 🔲 ART DETAILS OVERLAY   */
@@ -860,3 +861,6 @@
     display: none;
   }
 }
+=======
+}
+>>>>>>> origin/testing:src/Homepage/Homepage.css
