@@ -10,12 +10,12 @@
   },
   {
     "id": 2,
-    "name": "Dovy",
+    "name": "Dovy Oak Wood",
     "artist": "by Woodlands",
     "category": "Handmade Decor",
     "price": 2890.00,
     "description": "Oak Wood Decorative Bird",
-    "imageUrl": "../images/Handmade Decor/dovy.png"
+    "imageUrl": "../images/Handmade Decor/dovy_oak.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "Handmade Decor",
     "price": 190.00,
     "description": "Candle Stand Large",
-    "imageUrl": "../images/Handmade Decor/fleur d.png"
+    "imageUrl": "../../images/Handmade Decor/fleur d.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "category": "Handmade Decor",
     "price": 590.00,
     "description": "Digital on Paper 30.0 inch x 24.0 inch",
-    "imageUrl": "../images/Handmade Decor/lupa terracota.png"
+    "imageUrl": "../../images/HandmadeDecors/lupa terracota.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "category": "Handmade Decor",
     "price": 1290.00,
     "description": "Sorghum Stem Bundle",
-    "imageUrl": "../images/Handmade Decor/malar pampas.png"
+    "imageUrl": "../../images/HandmadeDecors/malar pampas.png"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "category": "Handmade Decor",
     "price": 2050.00,
     "description": "Ort Ceramic Planter",
-    "imageUrl": "../images/Handmade Decor/ort.jpg"
+    "imageUrl": "../../images/Handmade Decor/ort.jpg"
   }
 ]

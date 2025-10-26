@@ -6,7 +6,7 @@
     "category": "Sculpture",
     "price": 6800.00,
     "description": "A contemporary wooden sculpture with fluid organic form and modern aesthetic.",
-    "imageUrl": "../images/Sculpture/blossom-v-wood-sculpture-by-wouter-van-der-vlugt-1-300x200.png"
+    "imageUrl": "../../images/Sculpture/blossom-v-wood-sculpture-by-wouter-van-der-vlugt-1-300x200.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "category": "Sculpture",
     "price": 7500.00,
     "description": "Elegant marble sculpture representing unity and the emotional bond between two beings.",
-    "imageUrl": "../images/Sculpture/first-connection-marble-sculpture-by-francesca-bernardini_1.png"
+    "imageUrl": "../../images/Sculpture/first-connection-marble-sculpture-by-francesca-bernardini_1.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "Sculpture",
     "price": 8200.00,
     "description": "A finely crafted animal sculpture reflecting strength and gentleness in marble finish.",
-    "imageUrl": "../images/Sculpture/la-grande-ourse-animal-sculpture-by-eric-valat_7-550x769.png"
+    "imageUrl": "../../images/Sculpture/la-grande-ourse-animal-sculpture-by-eric-valat_7-550x769.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "category": "Sculpture",
     "price": 9100.00,
     "description": "A stainless steel masterpiece embodying harmony through smooth reflective surfaces.",
-    "imageUrl": "../images/Sculpture/peace-and-love-ii-stainless-steel-sculpture-by-franck-k-1-550x536.png"
+    "imageUrl": "../../images/Sculpture/peace-and-love-ii-stainless-steel-sculpture-by-franck-k-1-550x536.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "category": "Sculpture",
     "price": 6400.00,
     "description": "Graceful marble sculpture inspired by the beauty and delicacy of nature’s forms.",
-    "imageUrl": "../images/Sculpture/rosa-by-marie-louise-sorbac-300x450.png"
+    "imageUrl": "../../images/Sculpture/rosa-by-marie-louise-sorbac-300x450.png"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "category": "Sculpture",
     "price": 7800.00,
     "description": "Intricately carved marble sculpture balancing geometric precision and organic flow.",
-    "imageUrl": "../images/Sculpture/stonegate-8-marble-sculpture-by-mattia-bosco-2-300x450.png"
+    "imageUrl": "../../images/Sculpture/stonegate-8-marble-sculpture-by-mattia-bosco-2-300x450.png"
   }
 ]

@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "Cat",
+    "name": "Cat Portrait",
     "artist": "by Hansana",
     "category": "Illustration & Sketch",
     "price": 2826.00,
     "description": "Charcoal Custom Portrait of Cat",
-    "imageUrl": "../images/Sketch arts/cat portrait.png"
+    "imageUrl": "../../images/Sketch arts/cat portrait.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "category": "Illustration & Sketch",
     "price": 3853.00,
     "description": "Custom hand drawn portrait using graphite pencil unique gift idea for mom, dad, children and other",
-    "imageUrl": "../images/Sketch arts/custom portrait.png"
+    "imageUrl": "../../images/Sketch arts/custom portrait.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "Illustration & Sketch",
     "price": 190.00,
     "description": "Custom hand drawn portrait using pencil",
-    "imageUrl": "../images/Sketch arts/Custom_Portrait_2.png"
+    "imageUrl": "../../images/Sketch arts/Custom_Portrait_2.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "category": "Illustration & Sketch",
     "price": 2826.00,
     "description": "Sketch of father and son using pencil",
-    "imageUrl": "../images/Sketch arts/custom portrait -3.png"
+    "imageUrl": "../../images/Sketch arts/custom portrait -3.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "category": "Illustration & Sketch",
     "price": 6375.00,
     "description": "Custom pet portraits dressed in suits",
-    "imageUrl": "../images/Sketch arts/dog portrait.png"
+    "imageUrl": "../../images/Sketch arts/dog portrait.png"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "category": "Illustration & Sketch",
     "price": 2826.00,
     "description": "Custom hand drawn portrait using pencil",
-    "imageUrl": "../images/Sketch arts/self portrait.png"
+    "imageUrl": "../../images/Sketch arts/self portrait.png"
   }
 ]

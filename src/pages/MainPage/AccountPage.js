@@ -11,8 +11,6 @@ import {
   FaEdit,
   FaLock,
   FaTimes,
-  FaEye,
-  FaEyeSlash,
 } from "react-icons/fa";
 
 export default function AccountPage() {
@@ -33,7 +31,6 @@ export default function AccountPage() {
   const [field, setField] = useState("");
   const [tempValue, setTempValue] = useState("");
   const [tempPayment, setTempPayment] = useState(account.payment);
-  const [showPassword, setShowPassword] = useState(false);
 
   // ✅ Load saved data from localStorage
   useEffect(() => {
@@ -91,27 +88,14 @@ export default function AccountPage() {
                 onClick={() => openOverlay("username")}
               />
             </p>
+
             <p className="password-line">
-              <strong>Password:</strong>{" "}
-              {showPassword ? account.password : "••••••••"}
+              <strong>Password:</strong> ••••••••
               <FaLock
                 className="edit-icon"
                 title="Edit Password"
                 onClick={() => openOverlay("password")}
               />
-              {showPassword ? (
-                <FaEyeSlash
-                  className="eye-icon"
-                  title="Hide Password"
-                  onClick={() => setShowPassword(false)}
-                />
-              ) : (
-                <FaEye
-                  className="eye-icon"
-                  title="Show Password"
-                  onClick={() => setShowPassword(true)}
-                />
-              )}
             </p>
           </div>
 

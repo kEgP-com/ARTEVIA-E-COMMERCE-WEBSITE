@@ -6,7 +6,7 @@
     "category": "Painting",
     "price": 3850.00,
     "description": "A vibrant abstract painting showcasing expressive strokes and layered textures.",
-    "imageUrl": "../images/Painting/Abstract Paint by Luinette Belen.jpg"
+    "imageUrl": "../../images/Painting/Abstract Paint by Luinette Belen.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "category": "Painting",
     "price": 4200.00,
     "description": "Oil on canvas featuring serene tones and subtle detailing of landscapes.",
-    "imageUrl": "../images/Painting/Oil Canvas by denCepada.jpg"
+    "imageUrl": "../../images/Painting/Oil Canvas by denCepada.jpg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "Painting",
     "price": 3990.00,
     "description": "A richly detailed oil painting with expressive brushwork and depth.",
-    "imageUrl": "../images/Painting/Oil On Canvas By Shan Arts.jpg"
+    "imageUrl": "../../images/Painting/Oil On Canvas By Shan Arts.jpg"
   },
   {
     "id": 4,
@@ -33,6 +33,6 @@
     "category": "Painting",
     "price": 4750.00,
     "description": "Part of the Pag Akbay series—an evocative depiction of human connection and emotion.",
-    "imageUrl": "../images/Painting/Pag Akbay Series VII by Leti watersong.jpg"
+    "imageUrl": "../../images/Painting/Pag Akbay Series VII by Leti watersong.jpg"
   }
 ]

@@ -7,17 +7,23 @@ import CodeVerification from "./pages/LoginPage/Code_verification";
 import CartPage from "./pages/MainPage/CartPage";
 import OrderPage from "./pages/MainPage/OrderPage";
 import AccountPage from "./pages/MainPage/AccountPage";
+import Homepage from "./pages/MainPage/Homepage";
+import Footer from "./components/footer"; 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/code-verification" element={<CodeVerification />} />
-      <Route path="/code-verification" element={<CodeVerification />} />
+
+
+      <Route path="/homepage" element={<Homepage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/order" element={<OrderPage />} />
       <Route path="/account" element={<AccountPage />} />
+      <Route path="/footer" element={<Footer />} /> 
+  
     </Routes>
   );
 }

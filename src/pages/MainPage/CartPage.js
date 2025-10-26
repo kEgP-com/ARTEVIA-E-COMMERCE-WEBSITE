@@ -15,7 +15,6 @@ import {
   FaBoxOpen,
   FaEdit,
 } from "react-icons/fa";
-import cartData from "../../data/CartData.json";
 import sampleImg from "../../images/Sketch arts/cat portrait.png";
 
 export default function CartPage() {
@@ -32,7 +31,7 @@ export default function CartPage() {
 
   const navigate = useNavigate();
 
-  // ✅ Load Account Info + Cart
+  // ✅ Load data on mount
   useEffect(() => {
     const saved = localStorage.getItem("accountInfo");
     if (saved) {
@@ -44,25 +43,34 @@ export default function CartPage() {
         payment: acc.payment || { paypal: "", gcash: "" },
       });
     }
-    setCartItems(cartData.map((item) => ({ ...item, quantity: 1 })));
+
+    // ✅ Load cart from localStorage
+    const storedCart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(storedCart);
   }, []);
 
-  // ✅ Delete item
-  const handleDelete = (id) =>
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  // ✅ Delete item & update localStorage
+  const handleDelete = (id) => {
+    setCartItems((prev) => {
+      const updated = prev.filter((item) => item.id !== id);
+      localStorage.setItem("cartItems", JSON.stringify(updated));
+      return updated;
+    });
+  };
 
   // ✅ Update quantity
   const updateQuantity = (id, change) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
+    setCartItems((prev) => {
+      const updated = prev.map((item) =>
         item.id === id
           ? { ...item, quantity: Math.max(1, (item.quantity || 1) + change) }
           : item
-      )
-    );
+      );
+      localStorage.setItem("cartItems", JSON.stringify(updated));
+      return updated;
+    });
   };
 
-  // ✅ Totals
   const subtotal = cartItems.reduce(
     (sum, i) => sum + i.price * (i.quantity || 1),
     0
@@ -81,13 +89,13 @@ export default function CartPage() {
 
   const handleProceed = () => setShowOverlay(true);
 
-  // ✅ Checkout: Save each cart item as its own order
+  // ✅ Finalize order & save to localStorage
   const handleOverlayProceed = () => {
     const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
 
     const newOrders = cartItems.map((item) => ({
       id: Date.now() + Math.random(),
-      image: sampleImg,
+      image: item.image || sampleImg,
       name: item.name,
       quantity: item.quantity || 1,
       price: item.price,
@@ -105,6 +113,7 @@ export default function CartPage() {
     }));
 
     localStorage.setItem("orders", JSON.stringify([...existingOrders, ...newOrders]));
+    localStorage.removeItem("cartItems");
 
     setShowOverlay(false);
     setCartItems([]);
@@ -150,7 +159,7 @@ export default function CartPage() {
               cartItems.map((item) => (
                 <div key={item.id} className="cart-item">
                   <div className="cart-item-img">
-                    <img src={sampleImg} alt={item.name} />
+                    <img src={item.image || sampleImg} alt={item.name} />
                   </div>
                   <div className="cart-item-info">
                     <h4>{item.name}</h4>
@@ -177,6 +186,7 @@ export default function CartPage() {
 
         {/* RIGHT SIDE */}
         <div className="cart-right">
+          {/* Shipping Address */}
           <div className="cart-box">
             <h3>
               <FaHome className="cart-icon" /> Shipping Address
@@ -191,6 +201,7 @@ export default function CartPage() {
             <p><strong>Contact:</strong> {accountInfo.contact || "Not set"}</p>
           </div>
 
+          {/* Payment Methods */}
           <div className="cart-box">
             <h3>
               <FaCreditCard className="cart-icon" /> Payment Methods
@@ -231,6 +242,28 @@ export default function CartPage() {
             </div>
           </div>
 
+          {/* Merchandise Protection */}
+          <div className="cart-box">
+            <h3>
+              <FaShieldAlt className="cart-icon" /> Merchandise Protection
+            </h3>
+            <hr />
+            <div className="protection-check">
+              <label>
+                <input
+                  type="checkbox"
+                  checked={protection}
+                  onChange={() => setProtection(!protection)}
+                />{" "}
+                Add ₱50 protection fee for damage or loss coverage
+              </label>
+            </div>
+            <p style={{ fontSize: "14px", color: "#6b4b2d", marginTop: "10px" }}>
+              Ensures your order is covered in case of shipment issues or item damage.
+            </p>
+          </div>
+
+          {/* Checkout Summary */}
           <div className="cart-box checkout-box">
             <h3>
               <FaListAlt className="cart-icon" /> Checkout Summary
@@ -244,16 +277,15 @@ export default function CartPage() {
             <p className="total"><strong>Total: ₱{total.toLocaleString()}</strong></p>
 
             <div className="checkout-buttons single">
-                <button className="purchase-btn" onClick={handleProceed}>
-                    Proceed to Checkout
-                </button>
-                </div>
-
+              <button className="purchase-btn" onClick={handleProceed}>
+                Proceed to Checkout
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* ✅ Overlay */}
+      {/* Overlay */}
       {showOverlay && (
         <div className="overlay">
           <div className="overlay-content">
