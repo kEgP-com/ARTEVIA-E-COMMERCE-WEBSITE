@@ -1,15 +1,13 @@
-/* Add this to the top of App.css */
-
 @font-face {
   font-family: 'Lora';
   src: url('../fonts/Lora-Regular.ttf') format('truetype');
-  font-weight: normal; /* 400 */
+  font-weight: normal; 
 }
 
 @font-face {
   font-family: 'Lora';
   src: url('../fonts/Lora-Bold.ttf') format('truetype');
-  font-weight: bold; /* 700 */
+  font-weight: bold; 
 }
 
 @font-face {
@@ -19,8 +17,6 @@
   font-style: italic;
 }
 
-/* ... rest of your CSS ... */
-/* Universal CSS Reset */
 * {
   margin: 0;
   padding: 0;
@@ -33,40 +29,33 @@
   flex-direction: column;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; 
 }
 
 .main-content {
   flex-grow: 1;
 }
 
-/* The rest of your CSS remains the same */
-/* ✅ HERO SECTION - MODIFIED */
-/* ✅ HERO SECTION - CORRECTED */
 .hero {
   padding: 60px 30px;
   text-align: center;
-  /* margin-top: 100px;      ❌ REMOVE THIS */
-  /* margin-bottom: 500px;  ❌ REMOVE THIS */
   
   min-height: 85vh;
   display: flex;
   flex-direction: column;
   
-  /* ✨ CHANGE this to move content to the top */
   justify-content: flex-start; 
-  /* ✨ ADD this to center the content and prevent it from stretching */
   align-items: flex-start;
-
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
 
 }
 
-/* Let's refine the hero text to match the design */
+
 .hero h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif; /* Nicer serif font */
-  font-size: 3.5em; /* Larger font size */
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  font-size: 3.5em; 
   color: #372414;
   text-align: left;
   margin-top: 50px;
@@ -75,8 +64,7 @@
 
 .hero p {
   font-size: 1.1em;
-  max-width: 500px; /* Constrain the paragraph width */
-  margin-top: 15px; /* Add some space below the h1 */
+  max-width: 500px; 
   margin-left: 30px;
   color: #372414;
   font-weight: bold;
@@ -84,18 +72,16 @@
 }
 
 
-/* ✅ BUTTON - CORRECTED */
 .btn-primary {
-  /* ✨ Let's add more padding and margin to match the design */
   padding: 15px 40px; 
-  margin-top: 30px; /* Space between the paragraph and button */
+  margin-top: 30px; 
 
   border: none;
   cursor: pointer;
   background-color: #372414;
   color: #fff;
   font-weight: bold;
-  font-size: 1em; /* Make button text slightly larger */
+  font-size: 1em; 
   border-radius: 5px;
   transition: background-color 0.3s ease;
   margin-left: 30px;
@@ -106,19 +92,19 @@
 }
 
 
-/* ✅ PROMO SECTION */
+
 .promo {
   padding: 40px 30px;
   text-align: center;
+  overflow-x: hidden; 
 }
 
 .btn-secondary {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  /* Let's also style this button to match the theme */
-  background-color: #372414; /* Dark brown */
-  color: #fff; /* White text */
+  background-color: #372414; 
+  color: #fff; 
   font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s ease;
@@ -128,19 +114,18 @@
   background-color: #5a3d24;
 }
 
-/* ✅ QUOTE SECTION */
 .quote {
   text-align: center;
-  padding: 30px; /* Reduced padding slightly to make room for border */
+  padding: 30px; 
   font-style: italic;
-  background-color: #B7A087; /* Background color from your header */
+  background-color: #B7A087; 
   background: linear-gradient(to right, #f1d0b3, #ffffff, #f1d0b3);
-  color: #372414;           /* Text color */
-  font-family: 'Brush Script MT', cursive; /* Use a script font for quotes */
-  font-size: 2.2em;         /* Larger font size */
-  line-height: 1.5;         /* Improve readability */
-  border-top: 20px solid #372414; /* Top border */
-  border-bottom: 20px solid #372414; /* Bottom border */
+  color: #372414;         
+  font-family: 'Brush Script MT', cursive; 
+  font-size: 2.2em;       
+  line-height: 1.5;        
+  border-top: 20px solid #372414; 
+  border-bottom: 20px solid #372414; 
 }
 
 .icon-img {
@@ -149,31 +134,21 @@
   cursor: pointer;
 }
 
-/* 👇 ADD THIS: New container for title and badge */
+
 .promo-title-container {
   position: relative;
   width: fit-content; 
   margin: 20px auto 50px auto; 
-  z-index: 2; /* <-- ADD THIS LINE */
+  z-index: 2; 
 }
 
-/* 👇 ADD THIS: Styles for the sale badge */
 .sale-badge {
   position: absolute;
-  width: 250px; /* Adjust size as needed */
+  width: 250px; 
   height: auto;
-  z-index: 10; /* Ensures it stays on top */
-  
-  /* Vertically center the badge */
+  z-index: 10; 
   top: 80%; 
-  
-  /* Position it on the left edge */
   left: -350px; 
-  
-  /* This transform pulls the badge 50% of its own width left
-    and 50% of its own height up, perfectly centering it
-    on the left edge of the title.
-  */
   transform: translate(-50%, -50%);
 }
 /* ===================================== */
@@ -201,7 +176,6 @@
 .art-gallery {
   display: flex;
   justify-content: center;
-  /* align-items: flex-start;  <-- We will control alignment on the column now */
   gap: 150px;
   flex-wrap: wrap; 
 }
@@ -211,9 +185,9 @@
   flex-direction: column;
   gap: 100px;
   
-  /* 👇 ADD THESE LINES to adjust vertical position */
-  position: relative; /* Enable positioning */
-  top: -100px;       /* Pull the column up by 50px (adjust as needed) */
+
+  position: relative; 
+  top: -100px;       
 }
 
 .art-frame-large {
@@ -228,26 +202,25 @@
   overflow: hidden;
 }
 
-/* 👇 MODIFIED this rule for portrait frames */
 .art-frame-small {
   border: 8px solid #372414;
   background-color: #fff9f0;
   padding: 15px;
-  width: 250px;   /* Narrower width */
-  height: 300px;  /* Taller height */
+  width: 250px;   
+  height: 300px; 
 
   position: relative;
   overflow: hidden;
 }
 .art-image-large {
-  width: 100%;       /* Fill the frame width */
-  height: 100%;      /* Fill the frame height */
-  object-fit: cover; /* Crop if necessary to cover the frame, preventing distortion */
-  display: block;    /* Remove extra space below image */
+  width: 100%;    
+  height: 100%;      
+  object-fit: cover; 
+  display: block;  
 
 }
 
-/* Style for the small images inside their frames */
+
 .art-image-small {
   width: 100%;
   height: 100%;
@@ -261,22 +234,20 @@
 /* ===================================== */
 
 .art-overlay {
-  /* Positioning */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   
-  /* Appearance */
-  background: rgba(255, 249, 240, 0.95); /* Slightly transparent version of your frame bg */
+
+  background: rgba(255, 249, 240, 0.95); 
   
-  /* Hide by default */
+
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
   
-  /* Content layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -284,7 +255,7 @@
   padding: 20px;
 }
 
-/* Show on hover */
+
 .art-frame-large:hover .art-overlay,
 .art-frame-small:hover .art-overlay {
   opacity: 1;
@@ -294,12 +265,12 @@
 .art-info {
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Puts name on left, price on right */
+  justify-content: space-between; 
   color: #372414;
   font-family: 'Lora', serif;
   font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 25px; /* Space between info and buttons */
+  margin-bottom: 25px;
 }
 
 .art-buttons-container {
@@ -309,9 +280,9 @@
   width: 100%;
 }
 
-/* Styling for the new buttons, based on your image */
+
 .btn-overlay {
-  background-color: #f5e9d3; /* Light cream color from example */
+  background-color: #f5e9d3; 
   border: 2px solid #372414;
   border-radius: 8px;
   padding: 12px;
@@ -328,38 +299,35 @@
   color: #f5e9d3;
 }
 
-/* ... (all your existing CSS from hero to art display) ... */
 
 
 /* ===================================== */
 /* ========= PROMO SECTION STYLES ======== */
 /* ===================================== */
 
-/* This is the main background box */
 .promo-content-wrapper {
-  background-color: #B7A087; /* The requested background color */
+  background-color: #B7A087; 
   border-radius: 15px;
-  padding: 80px 40px 40px; /* Extra top padding to clear the title */
+  padding: 80px 40px 40px; 
   position: relative;
-  margin-top: -60px; /* Pulls it up behind the CATEGORIES title */
+  margin-top: -60px; 
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 1; /* Make sure it sits behind the title */
+  z-index: 1; 
 }
 
-/* This styles the container for the three frames */
 .category-gallery {
   width: 760px;
-  overflow: hidden; /* 👈 ADD: This hides frames 4 and 5 */
-  margin: 0 auto 40px auto; /* 👈 MODIFY: Center the window */
+  overflow: hidden; 
+  margin: 0 auto 40px auto; 
 }
 
 .category-carousel-inner {
-  display: flex; /* Lays out all 5 frames in a row */
-  gap: 80px; /* Space between frames */
-  transition: transform 0.5s ease-in-out; /* 👈 This is the animation! */
+  display: flex; 
+  gap: 80px; 
+  transition: transform 0.5s ease-in-out; 
 }
 
-/* This styles the three empty frames */
+
 .category-frame {
   border: 8px solid #372414;
   background-color: #fff9f0;
@@ -367,23 +335,23 @@
   width: 200px; 
   height: 250px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  flex-shrink: 0; /* 👈 ADD: Prevents frames from shrinking */
+  flex-shrink: 0;
   
-  /* Added these to center the text placeholder */
+ 
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Lora', serif;
 
-  /* 👇 ADD THESE LINES FOR THE BACKGROUND IMAGE 👇 */
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative; /* Needed for the overlay */
+  position: relative; 
   z-index: 1;
 }
 
-/* 👇 ADD THIS NEW RULE for the overlay 👇 */
+
 .category-frame::before {
   content: '';
   position: absolute;
@@ -391,23 +359,23 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* 40% black overlay */
-  z-index: 2; /* Sits on top of the BG image */
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 2; 
 }
 
-/* 👇 ADD THIS NEW RULE for the category text 👇 */
+
 .category-name {
   color: #FFFFFF;
   font-weight: bold;
   font-family: 'Lora', serif;
   font-size: 1.5em;
-  z-index: 3; /* Sits on top of the overlay */
-  position: relative; /* Required for z-index */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* For readability */
+  z-index: 3; 
+  position: relative; 
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
 }
 
 
-/* This styles the pagination dots */
+
 .pagination-dots {
   display: flex;
   justify-content: center;
@@ -422,15 +390,15 @@
   background-color: #372414; 
   border-radius: 50%;
   opacity: 0.4;
-  cursor: pointer; /* 👈 ADD: Shows it's clickable */
-  transition: opacity 0.3s ease; /* 👈 ADD: Nice fade effect */
+  cursor: pointer; 
+  transition: opacity 0.3s ease; 
 }
 
 .pagination-dots .dot.active {
-  opacity: 1; /* Active */
+  opacity: 1; 
 }
 
-/* This styles the promo text at the bottom */
+
 .promo-text {
   max-width: 700px;
   margin: 0 auto;
@@ -438,10 +406,6 @@
   color: #372414;
   line-height: 1.6;
 }
-
-/* ... (existing CSS) ... */
-
-/* ... (existing CSS for hero to promo sections) ... */
 
 /* ===================================== */
 /* ========= DISCOVERY SECTION STYLES ======== */
@@ -452,11 +416,11 @@
   z-index: 1; 
   margin-top: 40px; 
   
-  /* 👇 2. ADDED BACKGROUND STYLES HERE */
+
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  padding-bottom: 40px; /* Adds space so the wave is visible */
+  padding-bottom: 40px;
 }
 
 .discovery .section-title {
@@ -500,7 +464,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden; 
-  position: relative; /* Needed for the overlay positioning */
+  position: relative;
 }
 
 .discovery-frame img {
@@ -510,7 +474,6 @@
   display: block; 
 }
 
-/* 👇 ADD THESE NEW OVERLAY STYLES FOR DISCOVERY FRAMES 👇 */
 
 .discovery-overlay {
   /* Positioning */
@@ -520,15 +483,12 @@
   width: 100%;
   height: 100%;
   
-  /* Appearance */
-  background: rgba(255, 249, 240, 0.95); /* Light cream, slightly transparent */
+  background: rgba(255, 249, 240, 0.95); 
   
-  /* Hide by default */
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
   
-  /* Content layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -536,7 +496,6 @@
   padding: 20px;
 }
 
-/* Show on hover */
 .discovery-frame:hover .discovery-overlay {
   opacity: 1;
   visibility: visible;
@@ -550,7 +509,7 @@
   font-family: 'Lora', serif;
   font-size: 1em;
   font-weight: bold;
-  margin-bottom: 25px; /* Space between info and buttons */
+  margin-bottom: 25px; 
 }
 
 .discovery-buttons-container {
@@ -561,7 +520,7 @@
 }
 
 .btn-discovery-overlay {
-  background-color: #f5e9d3; /* Light cream */
+  background-color: #f5e9d3;
   border: 2px solid #372414;
   border-radius: 8px;
   padding: 12px;
@@ -578,7 +537,7 @@
   color: #f5e9d3;
 }
 
-/* 👆 END NEW OVERLAY STYLES FOR DISCOVERY FRAMES 👆 */
+
 
 
 .btn-browse-more {
@@ -603,14 +562,212 @@
 /* ===================================== */
 
 .bottom-wave-bg {
-  /* This gives the background a visible height */
-  height: 200px; /* You can adjust this value */
   
-  /* These lines make the image cover the section */
+  height: 200px;
+  
+
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  
-  /* Adds space between discovery section and this wave */
+ 
   margin-top: 40px; 
+} 
+
+/* ===================================== */
+/* ========= RESPONSIVE STYLES ========= */
+/* ===================================== */
+
+
+@media (max-width: 768px) {
+
+  /* --- General Font Sizes --- */
+  .hero h1 {
+    font-size: 2.8em; 
+    margin-top: 30px;
+  }
+
+  .hero p {
+    font-size: 1em; 
+    max-width: 90%; 
+  }
+
+  .quote {
+    font-size: 1.6em; 
+    padding: 25px;
+  }
+
+  .section-title {
+    font-size: 2em; 
+    padding: 12px 20px; 
+    width: 90%; 
+    text-align: center;
+  }
+  
+  /* --- Hero Section --- */
+  .hero {
+    align-items: center; 
+    text-align: center;
+    padding: 40px 15px;
+    min-height: 60vh; 
+  }
+
+  .hero h1,
+  .hero p,
+  .btn-primary {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* --- Art Display (Top Section) --- */
+  .art-gallery {
+    flex-direction: column; 
+    align-items: center; 
+    gap: 30px; 
+  }
+
+  .gallery-column-right {
+    top: 0; 
+    gap: 30px;
+    width: 100%; 
+    align-items: center; 
+  }
+
+  .art-frame-large {
+    width: 90%; 
+    max-width: 500px;
+    height: 300px; 
+    margin-top: 20px;
+  }
+
+  .art-frame-small {
+    width: 90%; 
+    max-width: 400px; 
+  }
+
+
+  /* --- Promo (Categories) Section --- */
+  .promo {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .promo-title-container {
+    margin-bottom: 30px; 
+  }
+
+  .sale-badge {
+    width: 180px; 
+    left: -80px;  
+    top: 75%;
+  }
+  
+  .promo-content-wrapper {
+    padding: 60px 20px 30px; 
+    margin-top: -50px; 
+  }
+
+
+  .category-gallery {
+    width: 200px; 
+  }
+
+    
+
+
+  /* --- Discovery Section --- */
+  .discovery-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    padding: 0 10px; 
+  }
+
+  .discovery-frame {
+    height: 250px;
+  }
+
+  .btn-browse-more {
+    margin-top: 40px; 
+  }
+  
+}
+
+
+
+@media (max-width: 480px) {
+
+  /* --- General Font Sizes --- */
+  .hero h1 {
+    font-size: 2.2em;
+  }
+
+  .quote {
+    font-size: 1.3em;
+  }
+
+  .section-title {
+    font-size: 1.5em; 
+    width: 95%;
+  }
+
+  /* --- Art Display (Top Section) --- */
+  .art-frame-large,
+  .art-frame-small {
+    width: 95%; 
+    height: 250px;
+  }
+
+  /* --- Promo (Categories) Section --- */
+  .promo {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sale-badge {
+    width: 120px; 
+    left: -40px; 
+    top: 70%;
+  }
+  
+  .pagination-dots {
+    gap: 10px; 
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .pagination-dots .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* --- Discovery Section --- */
+  .discovery-grid {
+  
+    grid-template-columns: 1fr; 
+    max-width: 300px; 
+  }
+
+  .discovery-frame {
+    height: 300px; 
+  }
+
+  .discovery-content-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .art-info {
+    font-size: 1.2em; 
+  }
+  .btn-overlay {
+    padding: 10px; 
+    font-size: 0.9em;
+  }
+  .discovery-info {
+    font-size: 0.9em;
+  }
+  .btn-discovery-overlay {
+    padding: 10px;
+    font-size: 0.9em;
+  }
 }

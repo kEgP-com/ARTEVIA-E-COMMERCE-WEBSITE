@@ -28,21 +28,19 @@ function Homepage() {
     { id: 5, name: "Handmade Decor", image: Handmadedecor2 } 
   ];
 
-  // Data for the Discovery section grid
   const discoveryImages = [
-    { src: DigitalArt1, name: "Digital Art IV", price: "$250.00" }, 
-    { src: Painting1, name: "Painting V", price: "$150.00" },
-    { src: Sculpture1, name: "Sculpture VI", price: "$320.00" },
-    { src: Sketch1, name: "Sketch VII", price: "$90.00" },
-    { src: DigitalArt2, name: "Digital Art VIII", price: "$280.00" },
-    { src: Handmadedecor2, name: "Handmade Decor IX", price: "$110.00" }
+    { src: DigitalArt1, name: "Searching for peace", price: "P1,750" }, 
+    { src: Painting1, name: "Pag Akbay Series", price: "P5,500" },
+    { src: Sculpture1, name: "Blossom V Wood", price: "P5,954" },
+    { src: Sketch1, name: "Cat Portrait", price: "P2,826" },
+    { src: DigitalArt2, name: "A Taste of Honey", price: "P7,700" },
+    { src: Handmadedecor2, name: "Dovy oak wood", price: "P2,890" }
   ];
 
   const slideAmount = (activePage - 1) * 280;
 
   return (
     <div className="homepage">
-      {/* ✅ HERO SECTION */}
       <section className="hero" style={{ backgroundImage: `url(${WaveBg})` }}>
         <h1>Shop art, live inspired.</h1>
         <p>
@@ -53,26 +51,22 @@ function Homepage() {
         <button className="btn-primary">Shop Now</button>
       </section>
 
-      {/* ✅ QUOTE SECTION */}
       <section className="quote">
         <p>“Art should comfort the disturbed and disturb the comfortable” - Banksy</p>
       </section>
       
-      {/* Art Display Section */}
       <section className="art-display">
         <div className="section-title">TOP</div>
 
         <div className="art-gallery">
-          {/* Left Column for the large frame */}
           <div className="gallery-column-left">
             <div className="art-frame-large">
               <img src={DigitalArt1} alt="Digital Art" className="art-image-large" />
               
-              {/* Art Display Overlay */}
               <div className="art-overlay">
                 <div className="art-info">
-                  <span>Digital Art I</span>
-                  <span>$299.00</span>
+                  <span>Searching for Peace</span>
+                  <span>P1,750</span>
                 </div>
                 <div className="art-buttons-container">
                   <button className="btn-overlay">ADD TO CART</button>
@@ -82,14 +76,13 @@ function Homepage() {
             </div>
           </div>
 
-          {/* Right Column for the two smaller frames */}
           <div className="gallery-column-right">
             <div className="art-frame-small">
               <img src={Painting1} alt="Painting" className="art-image-small" />
               <div className="art-overlay">
                 <div className="art-info">
-                  <span>Painting II</span>
-                  <span>$123.00</span>
+                  <span>Pag Akbay Series</span>
+                  <span>P5,500</span>
                 </div>
                 <div className="art-buttons-container">
                   <button className="btn-overlay">ADD TO CART</button>
@@ -101,8 +94,8 @@ function Homepage() {
               <img src={Sculpture1} alt="Sculpture" className="art-image-small" />
               <div className="art-overlay">
                 <div className="art-info">
-                  <span>Sculpture III</span>
-                  <span>$180.00</span>
+                  <span>Blossom Wood</span>
+                  <span>P5,954</span>
                 </div>
                 <div className="art-buttons-container">
                   <button className="btn-overlay">ADD TO CART</button>
@@ -114,7 +107,6 @@ function Homepage() {
         </div>
       </section>
 
-      {/* ✅ PROMO SECTION - NOW DYNAMIC */}
       <section className="promo">
         <div className="promo-title-container">
           <img src={SaleBadge} alt="Sale" className="sale-badge" />
@@ -156,10 +148,8 @@ function Homepage() {
         
       </section>
 
-      {/* ✅ DISCOVERY SECTION */}
       <section 
         className="discovery"
-        // 👇 1. ADDED STYLE PROP HERE
     style={{ 
           backgroundImage: `url(${WaveBg}), linear-gradient(to bottom, white, #E49E69)` 
         }}
@@ -172,7 +162,6 @@ function Homepage() {
               <div key={index} className="discovery-frame">
                 <img src={art.src} alt={art.name} />
 
-                {/* Discovery Overlay */}
                 <div className="discovery-overlay"> 
                   <div className="discovery-info">
                     <span>{art.name}</span> 
@@ -190,9 +179,7 @@ function Homepage() {
           <button className="btn-browse-more">Browse More</button>
         </div>
       </section>
-      {/* 👆 END OF DISCOVERY SECTION 👆 */}
 
-      {/* The bottom-wave-bg section is now removed */}
 
     </div>
   );
