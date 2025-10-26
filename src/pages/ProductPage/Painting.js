@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import "../../css/Category.css";
-import painting from "../../data/Painting.json";
+import paintingData from "../../data/Painting.json";
 import ProductCard from "../../components/ProductCard";
 
 function Painting() {
@@ -13,8 +13,8 @@ function Painting() {
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
 
-
-  const filteredSculptures = painting.filter((art) => {
+  // ✅ Filter paintings based on search and category
+  const filteredPaintings = paintingData.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
     return matchesSearch && matchesCategory;
@@ -23,48 +23,47 @@ function Painting() {
   return (
     <>
       <Navbar />
-      <div className="sculpture-page">
-
-        <section className="sculpture-hero">
+      <div className="painting-page">
+        <section className="painting-hero">
           <h1>Paintings</h1>
 
-
-          <div className="sculpture-filters">
+          {/* ✅ Filters */}
+          <div className="painting-filters">
             <input
               type="text"
-              placeholder="Search sculptures..."
+              placeholder="Search paintings..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="sculpture-search-input"
+              className="painting-search-input"
             />
             <select
-              className="sculpture-filter-select"
+              className="painting-filter-select"
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
             >
               <option value="All">All Categories</option>
-              <option value="Sculpture">Sculpture</option>
-              <option value="Marble">Marble</option>
-              <option value="Wood">Wood</option>
-              <option value="Steel">Steel</option>
+              <option value="Oil">Oil</option>
+              <option value="Acrylic">Acrylic</option>
+              <option value="Watercolor">Watercolor</option>
+              <option value="Digital">Digital</option>
             </select>
-            <button className="sculpture-search-btn">Search</button>
+            <button className="painting-search-btn">Search</button>
           </div>
 
-
+          {/* ✅ Painting Cards */}
           <div className="discovery-grid">
-            {filteredSculptures.length > 0 ? (
-              filteredSculptures.map((art) => (
+            {filteredPaintings.length > 0 ? (
+              filteredPaintings.map((art) => (
                 <ProductCard
                   key={art.id}
                   item={art}
-                  categoryFolder="Sculpture"
+                  categoryFolder="Painting" // ✅ folder in src/images/Painting/
                   onView={handleView}
                   onAddToCart={() => console.log("Added:", art.name)}
                 />
               ))
             ) : (
-              <p className="no-results">No sculptures found.</p>
+              <p className="no-results">No paintings found.</p>
             )}
           </div>
         </section>
@@ -72,7 +71,7 @@ function Painting() {
 
       <Footer />
 
-
+      {/* ✅ Overlay Modal */}
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
@@ -80,7 +79,7 @@ function Painting() {
               ×
             </button>
             <img
-              src={require(`../../images/Sculpture/${selectedArt.imageUrl.split("/").pop()}`)}
+              src={require(`../../images/Painting/${selectedArt.imageUrl.split("/").pop()}`)}
               alt={selectedArt.name}
               className="overlay-image"
             />
