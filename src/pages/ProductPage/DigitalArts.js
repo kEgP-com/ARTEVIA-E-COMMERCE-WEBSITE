@@ -5,9 +5,8 @@ import "../../css/Category.css";
 import digitalArts from "../../data/DigitalArts.json";
 import ProductCard from "../../components/ProductCard";
 
-//Ramos, Rachel JOy D. Minahal
 const images = require.context("../../images", true);
-
+//test1234567890
 function DigitalArts() {
   const [selectedArt, setSelectedArt] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
