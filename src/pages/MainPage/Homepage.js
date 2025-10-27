@@ -16,7 +16,7 @@ import Painting2 from "../../images/Painting/Oil_On_Canvas_By_Shan_Arts.jpg";
 import Sculpture2 from "../../images/Sculpture/la-grande-ourse-animal-sculpture-by-eric-valat_7-550x769.png";
 import Sketch2 from "../../images/Sketch arts/Custom_Portrait_2.png";
 
-//Import 12345
+//Import 12345.
 import digitalArts from "../../data/DigitalArts.json";
 import handmadeDecors from "../../data/HandmadeDecors.json";
 import paintings from "../../data/Painting.json";
