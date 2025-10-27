@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import "../../css/Category.css";
-import paintingData from "../../data/Painting.json";
+import painting from "../../data/Painting.json";
 import ProductCard from "../../components/ProductCard";
+
+
+const images = require.context("../../images", true);
 
 function Painting() {
   const [selectedArt, setSelectedArt] = useState(null);
@@ -13,8 +16,19 @@ function Painting() {
   const handleView = (art) => setSelectedArt(art);
   const closeOverlay = () => setSelectedArt(null);
 
-  
-  const filteredPaintings = paintingData.filter((art) => {
+ 
+  const getImagePath = (path) => {
+    try {
+      const cleanPath = path.replace(/^(\.\.\/)+images\//, "");
+      return images(`./${cleanPath}`);
+    } catch (err) {
+      console.warn("Image not found:", path);
+      return "";
+    }
+  };
+
+
+  const filteredSketches = painting.filter((art) => {
     const matchesSearch = art.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = filterCategory === "All" || art.category === filterCategory;
     return matchesSearch && matchesCategory;
@@ -23,47 +37,44 @@ function Painting() {
   return (
     <>
       <Navbar />
-      <div className="painting-page">
-        <section className="painting-hero">
-          <h1>Paintings</h1>
 
-        
-          <div className="painting-filters">
+      <div className="sculpture-page">
+        <section className="sculpture-hero">
+          <h1>Illustrations & Sketch</h1>
+
+    
+          <div className="sculpture-filters">
             <input
               type="text"
-              placeholder="Search paintings..."
+              placeholder="Search artworks..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="painting-search-input"
+              className="sculpture-search-input"
             />
             <select
-              className="painting-filter-select"
+              className="sculpture-filter-select"
               value={filterCategory}
               onChange={(e) => setFilterCategory(e.target.value)}
             >
               <option value="All">All Categories</option>
-              <option value="Oil">Oil</option>
-              <option value="Acrylic">Acrylic</option>
-              <option value="Watercolor">Watercolor</option>
-              <option value="Digital">Digital</option>
+              <option value="Sketch">Sketch</option>
+              <option value="Illustration">Illustration</option>
+              <option value="Concept Art">Concept Art</option>
             </select>
-            <button className="painting-search-btn">Search</button>
           </div>
 
-
+    
           <div className="discovery-grid">
-            {filteredPaintings.length > 0 ? (
-              filteredPaintings.map((art) => (
+            {filteredSketches.length > 0 ? (
+              filteredSketches.map((art) => (
                 <ProductCard
                   key={art.id}
                   item={art}
-                  categoryFolder="Painting" 
                   onView={handleView}
-                  onAddToCart={() => console.log("Added:", art.name)}
                 />
               ))
             ) : (
-              <p className="no-results">No paintings found.</p>
+              <p className="no-results">No artworks found.</p>
             )}
           </div>
         </section>
@@ -71,18 +82,18 @@ function Painting() {
 
       <Footer />
 
-
+   
       {selectedArt && (
         <div className="overlay-backdrop" onClick={closeOverlay}>
           <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeOverlay}>
-              ×
-            </button>
+            <button className="close-btn" onClick={closeOverlay}>×</button>
+
             <img
-              src={require(`../../images/Painting/${selectedArt.imageUrl.split("/").pop()}`)}
+              src={getImagePath(selectedArt.imageUrl)}
               alt={selectedArt.name}
               className="overlay-image"
             />
+
             <h2>{selectedArt.name}</h2>
             <p><strong>{selectedArt.artist}</strong></p>
             <p><em>{selectedArt.category}</em></p>
