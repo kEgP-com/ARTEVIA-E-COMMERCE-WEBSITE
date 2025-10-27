@@ -12,13 +12,13 @@ export default function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // ✅ Default login credentials
-  const DEFAULT_USERNAME = "admin";
+  
+  const DEFAULT_USERNAME = "user";
   const DEFAULT_PASSWORD = "12345";
 
   const handleLogin = () => {
     if (input1.trim() === DEFAULT_USERNAME && input2.trim() === DEFAULT_PASSWORD) {
-      // ✅ Navigate to homepage after successful login
+ 
       navigate("/customer/homepage");
     } else if (input1 === "" || input2 === "") {
       setError("Please fill in both fields.");

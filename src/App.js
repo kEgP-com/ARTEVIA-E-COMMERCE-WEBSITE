@@ -42,4 +42,3 @@ export default function App() {
     </Routes>
   );
 }
-//Yasmien Aira Regidor
