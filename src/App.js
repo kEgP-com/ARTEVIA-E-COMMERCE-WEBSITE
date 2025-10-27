@@ -14,10 +14,7 @@ import Painting from "./pages/ProductPage/Painting";
 import Sketch from "./pages/ProductPage/Sketch";
 import HandmadeDecors from "./pages/ProductPage/HandmadeDecors";
 import ArtPage from "./pages/ProductPage/ArtPageList";
-//Yasmien Aira Regidor
-//3CS-B
-//AppDev
-//Yasmien
+
 export default function App() {
   return (
     <Routes>
