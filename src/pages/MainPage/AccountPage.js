@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import "../../css/AccountPage.css";
@@ -11,9 +12,12 @@ import {
   FaEdit,
   FaLock,
   FaTimes,
+  FaSignOutAlt,
 } from "react-icons/fa";
 
 export default function AccountPage() {
+  const navigate = useNavigate();
+
   const [account, setAccount] = useState({
     fullName: "Carl M. Rodriguez",
     email: "carl.rodriguez@example.com",
@@ -32,12 +36,10 @@ export default function AccountPage() {
   const [tempValue, setTempValue] = useState("");
   const [tempPayment, setTempPayment] = useState(account.payment);
 
-
   useEffect(() => {
     const saved = localStorage.getItem("accountInfo");
     if (saved) setAccount(JSON.parse(saved));
   }, []);
-
 
   useEffect(() => {
     localStorage.setItem("accountInfo", JSON.stringify(account));
@@ -60,12 +62,59 @@ export default function AccountPage() {
     alert(`${field} updated successfully!`);
   };
 
+  // ✅ Logout function
+  const handleLogout = () => {
+    localStorage.removeItem("accountInfo");
+    navigate("/customer/login");
+  };
+
+  // ✅ Inline style for the logout button
+  const logoutButtonStyle = {
+    backgroundColor: "#e63946",
+    color: "white",
+    border: "none",
+    padding: "8px 16px",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontWeight: "500",
+    display: "flex",
+    alignItems: "center",
+    gap: "6px",
+    transition: "background-color 0.3s",
+  };
+
+  const logoutButtonHoverStyle = {
+    ...logoutButtonStyle,
+    backgroundColor: "#c92c3a",
+  };
+
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <>
       <Navbar />
 
       <div className="account-page">
-        <h2 className="account-heading">My Account</h2>
+        <div
+          className="account-header"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h2 className="account-heading">My Account</h2>
+
+          {/* ✅ Logout Button with inline CSS */}
+          <button
+            style={isHovered ? logoutButtonHoverStyle : logoutButtonStyle}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onClick={handleLogout}
+          >
+            <FaSignOutAlt style={{ fontSize: "1rem" }} /> Logout
+          </button>
+        </div>
 
         <div className="account-container">
           {/* Personal Info */}
@@ -148,7 +197,7 @@ export default function AccountPage() {
         </div>
       </div>
 
-      {/* 🧾 Editable Overlay */}
+      {/* Editable Overlay */}
       {showOverlay && (
         <div className="overlay">
           <div className="overlay-content">
@@ -156,14 +205,12 @@ export default function AccountPage() {
               <FaTimes />
             </button>
 
-            {/* Dynamic Title */}
             <h2>
               Edit{" "}
               {field.charAt(0).toUpperCase() +
                 field.slice(1).replace("_", " ")}
             </h2>
 
-            {/* Payment Editing */}
             {field === "payment" ? (
               <div className="payment-edit">
                 <label>PayPal Link / Email</label>
@@ -194,7 +241,6 @@ export default function AccountPage() {
                 />
               </div>
             ) : (
-              // Other Editable Fields
               <>
                 <p>Enter new {field} below:</p>
                 <input
