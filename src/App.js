@@ -17,6 +17,7 @@ import ArtPage from "./pages/ProductPage/ArtPageList";
 //Yasmien Aira Regidor
 //3CS-B
 //AppDev
+//Yasmien
 export default function App() {
   return (
     <Routes>
