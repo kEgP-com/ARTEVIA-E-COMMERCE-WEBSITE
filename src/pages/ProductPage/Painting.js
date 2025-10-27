@@ -40,7 +40,7 @@ function Painting() {
 
       <div className="sculpture-page">
         <section className="sculpture-hero">
-          <h1>Illustrations & Sketch</h1>
+          <h1>Painting</h1>
 
     
           <div className="sculpture-filters">
