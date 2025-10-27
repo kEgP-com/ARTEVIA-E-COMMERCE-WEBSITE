@@ -72,7 +72,7 @@ function ArtPageList() {
               <option value="Painting">Painting</option>
               <option value="Illustration & Sketch">Illustration & Sketch</option>
               <option value="Handmade Decor">Handmade Decor</option>
-              <option value="Digital Arts">Digital Arts</option> 
+              <option value="Digital Art">Digital Arts</option> 
             </select>
 
             <select
