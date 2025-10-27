@@ -5,7 +5,7 @@ import "../../css/Category.css";
 import digitalArts from "../../data/DigitalArts.json";
 import ProductCard from "../../components/ProductCard";
 
-//Kin gANITO BA
+
 const images = require.context("../../images", true);
 
 function DigitalArts() {
