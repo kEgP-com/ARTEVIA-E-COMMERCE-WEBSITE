@@ -19,6 +19,11 @@ export default function OrderPage() {
   const [filter, setFilter] = useState("All");
   const [showClearConfirm, setShowClearConfirm] = useState(false);
 
+  // Vendor messaging overlay states
+  const [showVendorOverlay, setShowVendorOverlay] = useState(false);
+  const [currentVendorOrder, setCurrentVendorOrder] = useState(null);
+  const [vendorMessage, setVendorMessage] = useState("");
+
   // Load Orders from LocalStorage
   useEffect(() => {
     const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
@@ -55,11 +60,33 @@ export default function OrderPage() {
     alert(`Thank you! You rated this order ${rating}⭐`);
   };
 
-  // Contact
+  // Contact Driver
   const handleContactDriver = (driver) =>
     alert(`Calling ${driver}...`);
-  const handleContactVendor = () =>
-    alert(" Contacting vendor support...");
+
+  // Open Vendor Messaging Overlay
+  const handleContactVendor = (order) => {
+    setCurrentVendorOrder(order);
+    setVendorMessage(""); // reset message
+    setShowVendorOverlay(true);
+  };
+
+  // Send message to vendor
+  const handleSendVendorMessage = () => {
+    const existingMessages = JSON.parse(localStorage.getItem("vendorMessages")) || [];
+    const newMessage = {
+      orderId: currentVendorOrder.id,
+      orderName: currentVendorOrder.name,
+      message: vendorMessage,
+      date: new Date().toLocaleString(),
+    };
+    localStorage.setItem(
+      "vendorMessages",
+      JSON.stringify([...existingMessages, newMessage])
+    );
+    alert("Message sent to vendor!");
+    setShowVendorOverlay(false);
+  };
 
   // Clear All Orders
   const handleClearAll = () => {
@@ -95,7 +122,7 @@ export default function OrderPage() {
         {/* ORDER LIST */}
         {filteredOrders.length === 0 ? (
           <div className="empty-order">
-            No {filter.toLowerCase()} orders found 
+            No {filter.toLowerCase()} orders found
           </div>
         ) : (
           <div className="orders-list">
@@ -109,9 +136,7 @@ export default function OrderPage() {
                   <h3>{order.name}</h3>
                   <p>
                     <strong>Status:</strong>{" "}
-                    <span
-                      className={`order-status ${order.status.toLowerCase()}`}
-                    >
+                    <span className={`order-status ${order.status.toLowerCase()}`}>
                       {order.status}
                     </span>
                   </p>
@@ -157,7 +182,10 @@ export default function OrderPage() {
                     </button>
                   )}
 
-                  <button className="vendor-btn" onClick={handleContactVendor}>
+                  <button
+                    className="vendor-btn"
+                    onClick={() => handleContactVendor(order)}
+                  >
                     <FaUserTie /> Vendor
                   </button>
 
@@ -240,6 +268,37 @@ export default function OrderPage() {
                 <strong>Your Rating:</strong> {selectedOrder.rating}⭐
               </p>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* VENDOR CONTACT MODAL */}
+      {showVendorOverlay && currentVendorOrder && (
+        <div className="overlay">
+          <div className="overlay-content">
+            <button
+              className="close-btn"
+              onClick={() => setShowVendorOverlay(false)}
+            >
+              ✕
+            </button>
+            <h2>Message Vendor</h2>
+            <p>
+              You are sending a message regarding: <strong>{currentVendorOrder.name}</strong>
+            </p>
+            <textarea
+              placeholder="Type your message to the vendor..."
+              value={vendorMessage}
+              onChange={(e) => setVendorMessage(e.target.value)}
+              style={{ width: "100%", height: "120px", margin: "10px 0", padding: "8px" }}
+            />
+            <button
+              className="confirm-btn"
+              onClick={handleSendVendorMessage}
+              disabled={!vendorMessage.trim()}
+            >
+              Send Message
+            </button>
           </div>
         </div>
       )}
