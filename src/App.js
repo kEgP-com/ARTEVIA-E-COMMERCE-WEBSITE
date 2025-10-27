@@ -23,9 +23,9 @@ export default function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/code-verification" element={<CodeVerification />} />
-      
+
       {/* Main pages */}
-      <Route path="/" element={<Navigate to="/homepage" />} /> {/* default redirect */}
+      <Route path="/" element={<Navigate to="/homepage" />} />
       <Route path="/homepage" element={<Homepage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/order" element={<OrderPage />} />
@@ -38,7 +38,6 @@ export default function App() {
       <Route path="/painting" element={<Painting />} />
       <Route path="/sketch" element={<Sketch />} />
       <Route path="/handmade-decors" element={<HandmadeDecors />} />
-
     </Routes>
   );
 }

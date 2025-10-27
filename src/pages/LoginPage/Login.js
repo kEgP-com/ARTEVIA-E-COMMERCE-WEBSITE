@@ -58,13 +58,16 @@ export default function Login() {
             className="input2 password-input"
             type={showPassword ? "text" : "password"}
           />
-          <span
+          <button
+            type="button"
             className="eye-icon"
             onClick={() => setShowPassword(!showPassword)}
+            aria-label="Toggle password visibility"
           >
             {showPassword ? <FaEyeSlash /> : <FaEye />}
-          </span>
+          </button>
         </div>
+
 
         {/* Error Message */}
         {error && <p className="error-message">{error}</p>}
@@ -79,7 +82,7 @@ export default function Login() {
           <span className="text3-label">Don’t have an account?</span>{" "}
           <span
             className="signup-link"
-            onClick={() => navigate("/register")}
+            onClick={() => navigate("/customer/register")}
             style={{ cursor: "pointer", textDecoration: "underline" }}
           >
             Sign Up Now!
@@ -87,7 +90,7 @@ export default function Login() {
         </span>
 
         {/* Forgot Password */}
-        <Link to="/code-verification" className="text4">
+        <Link to="/customer/code-verification" className="text4">
           Forgot Password?
         </Link>
       </div>

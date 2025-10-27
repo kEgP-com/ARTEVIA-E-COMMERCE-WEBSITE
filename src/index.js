@@ -14,7 +14,6 @@ root.render(
         <Route path="/customer/*" element={<App />} />
         <Route path="/admin/*" element={<AdminApp />} />
         
-        <Route path="*" element={<Navigate to="/customer/homepage" />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

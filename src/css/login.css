@@ -1,3 +1,5 @@
+
+
 html, body {
   margin: 0;
   padding: 0;
@@ -7,7 +9,6 @@ html, body {
   font-family: Arial, sans-serif;
 }
 
-/* Background View */
 .view {
   display: flex;
   justify-content: center;
@@ -24,7 +25,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Login Box */
+
 .column {
   width: 458px;
   display: flex;
@@ -38,7 +39,7 @@ html, body {
   text-align: center;
 }
 
-/* Logo */
+
 .logo-image {
   max-width: 380px;
   height: auto;
@@ -47,7 +48,7 @@ html, body {
   margin: 0 auto 30px auto;
 }
 
-/* Inputs */
+
 .input,
 .input2 {
   color: #828282;
@@ -62,56 +63,7 @@ html, body {
   display: block;
 }
 
-/* Password Container */
-.password-container {
-  position: relative;
-  width: 400px; 
-  margin-top: 10px;
-}
 
-.password-input {
-  width: 100%;
-  padding: 10px 45px 10px 16px;
-  box-sizing: border-box;
-  font-size: 20px;
-  border-radius: 8px;
-  border: 1px solid #E0E0E0;
-  background: #FFFFFF;
-  color: #828282;
-}
-
-/* 👁️ Eye Icon Button */
-.eye-icon {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #888;
-  font-size: 1.3rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.eye-icon:hover {
-  color: #333;
-  transform: translateY(-50%) scale(1.1);
-}
-
-/* Error Message */
-.error-message {
-  color: #ff4d4f;
-  font-size: 14px;
-  margin-top: 6px;
-  margin-bottom: -10px;
-  text-align: center;
-}
-
-/* Login Button */
 .button {
   width: 400px;
   display: flex;
@@ -133,6 +85,11 @@ html, body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
+.button:hover .text2 {
+  color: #000000 !important;
+}
+
+
 .text2 {
   color: #020202 !important;
   font-size: 16px;
@@ -140,7 +97,6 @@ html, body {
   letter-spacing: 0.5px;
 }
 
-/* Footer Links */
 .text3 {
   color: #000000 !important;
   font-size: 16px;
@@ -152,21 +108,6 @@ html, body {
   color: #030303;
   font-weight: normal;
   font-size: 14px;
-}
-
-.signup-link {
-  color: #000000 !important;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: normal;
-  font-size: 14px;
-}
-
-.signup-link:hover {
-  color: #9e7759 !important;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 .text4 {
@@ -187,15 +128,89 @@ html, body {
   transform: scale(1.05);
 }
 
-/* ✅ RESPONSIVE DESIGN */
+
+.signup-link {
+  color: #000000 !important;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.signup-link:hover {
+  color: #9e7759 !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.clickable-text {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #825A3C;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.clickable-text:hover {
+  color: #000000 !important;
+  transform: scale(1.05);
+}
+
+
+
+.code-verification-title {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.code-verification-input {
+  width: 360px;
+  padding: 12px 18px;
+  font-size: 17px;
+  border-radius: 10px;
+  border: 1px solid #d1c1b1;
+  background: #ffffff;
+  color: #555555;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px #00000020;
+  transition: border-color 0.3s ease;
+}
+
+.code-verification-input:focus {
+  outline: none;
+  border-color: #825A3C;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+
 @media (max-width: 1024px) {
   .column {
     width: 70%;
     border-radius: 45px;
     padding: 60px 0;
   }
-  .input, .input2, .button, .password-container {
+
+  .input, .input2, .button {
     width: 80%;
+    font-size: 18px;
+  }
+
+  .code-verification-input {
+    width: 75%;
   }
 }
 
@@ -206,14 +221,18 @@ html, body {
     border-radius: 40px;
   }
 
-  .input, .input2, .button, .password-container {
+  .input, .input2, .button {
     width: 80%;
     font-size: 17px;
   }
 
-  .eye-icon {
-    right: 12px;
-    font-size: 1.1rem;
+  .text2, .text3, .text4 {
+    font-size: 15px;
+  }
+
+  .code-verification-input {
+    width: 80%;
+    font-size: 16px;
   }
 }
 
@@ -229,15 +248,110 @@ html, body {
     padding-bottom: 10px;
   }
 
-  .input, .input2, .button, .password-container {
+  .input, .input2, .button {
     width: 75%;
     font-size: 15px;
   }
 
-  .password-input {
-    padding-right: 38px;
+  .button {
+    padding: 8px 0;
   }
 
+  .text, .text2, .text3, .text4 {
+    font-size: 14px;
+  }
+
+  .code-verification-input {
+    width: 80%;
+    font-size: 15px;
+  }
+
+  .code-verification-title {
+    font-size: 18px;
+  }
+}
+
+
+.password-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; 
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.password-input {
+  width: 100%;
+  font-size: 20px;
+  color: #828282;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  padding: 8px 45px 8px 16px; /* extra space for eye icon */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #825A3C;
+}
+
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.eye-icon:hover {
+  color: #333;
+  transform: translateY(-50%) scale(1.1);
+}
+
+
+@media (max-width: 1024px) {
+  .password-container {
+    width: 80%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .password-container {
+    width: 80%;
+  }
+  .password-input {
+    font-size: 17px;
+    padding: 8px 42px 8px 14px;
+  }
+  .eye-icon {
+    right: 12px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .password-container {
+    width: 75%;
+  }
+  .password-input {
+    font-size: 15px;
+    padding: 8px 38px 8px 12px;
+  }
   .eye-icon {
     right: 10px;
     font-size: 1rem;

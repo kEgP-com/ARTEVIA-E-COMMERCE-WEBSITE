@@ -1,25 +1,35 @@
 import React, { useState } from "react";
 import "../../css/Register.css";
 import wavebg from "../../images/images/login_bg.png";
-import { FaCheckCircle, FaRegCircle } from "react-icons/fa"; // ✅ Import circle icons
+import { FaCheckCircle, FaRegCircle, FaGoogle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [confirm, setConfirm] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignUp = () => {
     if (!agreed) {
       alert("You must agree to the Terms of Service and Privacy Policy!");
       return;
     }
-    alert("Sign up clicked!");
+
+    // You can add actual sign-up logic here
+
+    alert("Sign up successful!");
+    navigate("/customer/homepage"); // Navigate after signing up
+  };
+
+  const handleGoogleSignIn = () => {
+    alert("Continue with Google clicked!");
+    navigate("/customer/homepage"); // Navigate after Google sign-in
   };
 
   return (
     <div className="contain">
-      {/* Inject important inline styles */}
       <style>{`
         .checkmark {
           cursor: pointer !important;
@@ -27,6 +37,24 @@ export default function Register() {
         }
         .checkmark:hover {
           transform: scale(1.1) !important;
+        }
+        .google-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          padding: 10px 20px;
+          cursor: pointer;
+          gap: 10px;
+          margin-top: 10px;
+          font-weight: bold;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .google-button:hover {
+          transform: scale(1.02);
+          box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
       `}</style>
 
@@ -72,39 +100,23 @@ export default function Register() {
             <div className="box"></div>
           </div>
 
-          {/* Google button */}
-          <button
-            className="row-view2"
-            onClick={() => alert("Continue with Google clicked!")}
-          >
-            <img
-              src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/F1ShiVRMEg/9qn8hf2e_expires_30_days.png"
-              className="image"
-              alt="Google logo"
-            />
-            <span className="text6">Google</span>
+          {/* Google button with React icon */}
+          <button className="google-button" onClick={handleGoogleSignIn}>
+            <FaGoogle size={24} color="#DB4437" />
+            <span>Google</span>
           </button>
 
-
+          {/* Terms and agreement */}
           <div className="column3">
             <div className="terms-container" onClick={() => setAgreed(!agreed)}>
               {agreed ? (
-                <FaCheckCircle
-                  size={50}
-                  color="#000"
-                  className="checkmark"
-                />
+                <FaCheckCircle size={50} color="#000" className="checkmark" />
               ) : (
-                <FaRegCircle
-                  size={50}
-                  color="#555"
-                  className="checkmark"
-                />
+                <FaRegCircle size={50} color="#555" className="checkmark" />
               )}
               <span className="text5">
                 By clicking continue, you agree to our{" "}
-                <a href="#">Terms of Service</a> and{" "}
-                <br />
+                <a href="#">Terms of Service</a> and <br />
                 <a href="#">Privacy Policy</a>
               </span>
             </div>

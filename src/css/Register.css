@@ -379,3 +379,54 @@ html, body {
     height: 40px;
   }
 }
+/* GOOGLE LOGIN BUTTON */
+.google-button {
+  width: 400px; /* match the input width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #E0E0E0;
+  padding: 10px 0;
+  margin-bottom: 35px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  gap: 10px; /* spacing between icon and text */
+}
+
+/* Google icon inside button */
+.google-button svg {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+/* Button hover */
+.google-button:hover {
+  background: #b58c6a;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.google-button:hover span {
+  color: #000;
+  font-weight: bold;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .google-button {
+    width: 80%; /* scale down for tablets */
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .google-button {
+    width: 70%; /* scale down for mobile */
+    font-size: 14px;
+  }
+}
