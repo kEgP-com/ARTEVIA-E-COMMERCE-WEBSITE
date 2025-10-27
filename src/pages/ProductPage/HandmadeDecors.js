@@ -5,7 +5,7 @@ import "../../css/Category.css";
 import handmadeDecors from "../../data/HandmadeDecors.json";
 import ProductCard from "../../components/ProductCard";
 
-
+//Kin nakakapagod mag commit
 const images = require.context("../../images", true);
 
 function HandmadeDecors() {
