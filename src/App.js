@@ -15,6 +15,7 @@ import Sketch from "./pages/ProductPage/Sketch";
 import HandmadeDecors from "./pages/ProductPage/HandmadeDecors";
 import ArtPage from "./pages/ProductPage/ArtPageList";
 //Yasmien Aira Regidor
+//3CS-B
 export default function App() {
   return (
     <Routes>
@@ -23,7 +24,7 @@ export default function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/code-verification" element={<CodeVerification />} />
-
+      
       {/* Main pages */}
       <Route path="/" element={<Navigate to="/homepage" />} /> {/* default redirect */}
       <Route path="/homepage" element={<Homepage />} />

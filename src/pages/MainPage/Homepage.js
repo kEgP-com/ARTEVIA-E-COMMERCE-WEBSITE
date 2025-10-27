@@ -5,7 +5,7 @@ import Footer from "../../components/footer";
 import "../../css/Homepage.css";
 import WaveBg from "../../images/images/wavebg.png";
 import SaleBadge from "../../images/images/Sale.png";
-//Niel Arvin Reyes
+
 // Import a few main images manually for the top sections
 import DigitalArt1 from "../../images/Digital Art/Searching for peace.png";
 import Painting1 from "../../images/Painting/Pag Akbay Series VII by Leti watersong.jpg";
