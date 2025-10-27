@@ -12,7 +12,7 @@ import {
   FaFilter,
   FaExclamationTriangle,
 } from "react-icons/fa";
-//exports
+
 export default function OrderPage() {
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
